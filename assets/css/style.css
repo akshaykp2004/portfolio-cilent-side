@@ -1,5 +1,5 @@
 /* ============================================================
-   Custom Hat & Millinery Studio — style.css (Redesign)
+   Custom Hat & Millinery Studio â€” style.css (Redesign)
    Premium Luxury & High-Fashion Aesthetic
    ============================================================ */
 
@@ -424,21 +424,21 @@ a {
    HEADER & NAVBAR
    ============================================================ */
 .luxury-nav {
-  position: fixed;
+  position: sticky;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 1000;
   padding: 1.5rem 0;
-  transition: padding var(--transition), background var(--transition);
+  background: #0a0a0a;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .luxury-nav.scrolled {
   padding: 1rem 0;
-  background: var(--clr-nav-bg);
-  backdrop-filter: blur(16px);
-  border-bottom: 1px solid var(--clr-border);
-  box-shadow: var(--shadow-sm);
+  background: #050505;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
 .nav-container {
@@ -930,7 +930,7 @@ a {
 }
 
 .craft-list li::before {
-  content: '�';
+  content: '—';
   position: absolute;
   left: 0;
   color: var(--clr-accent);
@@ -1289,7 +1289,8 @@ body {
   padding-top: 0 !important;
 }
 
-/* REVERTED LOGO: WHITE OVER DARK OVERLAY */
-.luxury-nav { background: linear-gradient(to bottom, rgba(0,0,0,0.85), transparent) !important; background-image: none !important; }
+/* --- Luxury Solid Navbar Overrides --- */
 .luxury-nav .navbar-brand { color: #fff !important; font-family: inherit !important; }
-.luxury-nav .nav-link-luxury { color: rgba(255,255,255,0.9) !important; }
+.luxury-nav .nav-link-luxury { color: rgba(255, 255, 255, 0.85) !important; }
+.luxury-nav .nav-link-luxury:hover, .luxury-nav .nav-link-luxury.active { color: var(--clr-accent) !important; }
+.btn-toggle-ui { border-color: rgba(255, 255, 255, 0.2) !important; color: #fff !important; }
