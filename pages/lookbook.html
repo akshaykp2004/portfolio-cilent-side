@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lookbook | Custom Hat & Millinery Studio</title>
+  <meta name="description"
+    content="Explore our bespoke collections of bridal fascinators, luxury fedoras, and vintage headwear in the HMS Millinery Lookbook." />
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Outfit:wght@300;400;600&display=swap"
+    rel="stylesheet">
+
+  <style>
+    :root {
+      --clr-ivory: #FDFBF7;
+      --clr-beige: #F5F1E9;
+      --clr-gold: #D4AF37;
+      --clr-gold-light: #E5D5A5;
+      --clr-grey-light: #F0F0F0;
+      --ff-serif: 'Playfair Display', serif;
+      --ff-sans: 'Outfit', sans-serif;
+    }
+
+    body {
+      background-color: var(--clr-ivory);
+      font-family: var(--ff-sans);
+      color: #333;
+    }
+
+    /* --- Hero Section --- */
+    .lookbook-hero {
+      position: relative;
+      height: 700px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: url('../assets/images/lookbook_hero_bg.png') no-repeat center center/cover;
+    }
+
+    .lookbook-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(253, 251, 247, 0.7) 0%, rgba(253, 251, 247, 0.85) 100%);
+      backdrop-filter: blur(5px);
+      z-index: 1;
+    }
+
+    .lookbook-hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+    }
+
+    .lookbook-hero h1 {
+      font-family: var(--ff-serif);
+      font-size: 5rem;
+      font-weight: 400;
+      color: #1a1a1a;
+      letter-spacing: -1px;
+      margin-bottom: 0.5rem;
+    }
+
+    /* --- Gallery Container --- */
+    .gallery-container {
+      background: var(--clr-beige) url('../assets/images/lookbook_hero_bg.png') no-repeat center center/cover;
+      background-attachment: fixed;
+      padding: 10rem 0;
+      position: relative;
+    }
+
+    .gallery-container::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(253, 251, 247, 0.94);
+      z-index: 1;
+    }
+
+    .gallery-container .container {
+      position: relative;
+      z-index: 2;
+    }
+
+    .gallery-container::before {
+      content: '';
+      position: absolute;
+      top: -30px;
+      left: 0;
+      right: 0;
+      height: 60px;
+      background: var(--clr-beige);
+      border-radius: 50% / 100% 100% 0 0;
+      box-shadow: 0 -15px 30px rgba(0, 0, 0, 0.02);
+      z-index: 2;
+    }
+
+    /* --- Card Style Enhancements --- */
+    .hat-card {
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
+      transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+      border: 1px solid rgba(212, 175, 55, 0.05);
+      cursor: pointer;
+    }
+
+    .hat-card:hover {
+      transform: translateY(-10px) scale(1.03);
+      box-shadow: 0 20px 60px rgba(212, 175, 55, 0.12);
+    }
+
+    .hat-card-img {
+      position: relative;
+      aspect-ratio: 4/5;
+      overflow: hidden;
+    }
+
+    .hat-card-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .hat-card:hover .hat-card-img img {
+      transform: scale(1.1);
+    }
+
+    .hat-card-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(212, 175, 55, 0.1);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hat-card:hover .hat-card-overlay {
+      opacity: 1;
+    }
+
+    .view-details-text {
+      color: #fff;
+      font-size: 0.8rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-weight: 600;
+      padding: 0.8rem 1.5rem;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      backdrop-filter: blur(5px);
+    }
+
+    .tag-label {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      background: rgba(255, 255, 255, 0.9);
+      color: var(--clr-gold);
+      padding: 0.4rem 1rem;
+      font-size: 0.65rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      font-weight: 700;
+      border-radius: 20px;
+      z-index: 3;
+    }
+
+    .hat-card-body {
+      padding: 2rem;
+      background: #fff;
+    }
+
+    .hat-card-title {
+      font-family: var(--ff-serif);
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+      color: #1a1a1a;
+    }
+
+    .hat-card-caption {
+      font-size: 0.85rem;
+      color: #777;
+      margin-bottom: 1rem;
+      line-height: 1.5;
+    }
+
+    .hat-card-price {
+      font-size: 0.7rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--clr-gold);
+      font-weight: 600;
+    }
+
+    /* --- Collection Story Section --- */
+    .collection-header {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 5rem;
+    }
+
+    .collection-header h2 {
+      font-family: var(--ff-serif);
+      font-size: 3rem;
+      margin-bottom: 2rem;
+    }
+
+    .divider-gold {
+      width: 60px;
+      height: 1px;
+      background: var(--clr-gold);
+      margin: 2rem auto;
+    }
+
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      margin-bottom: 4rem;
+    }
+
+    .category-item {
+      text-align: center;
+    }
+
+    .category-item h4 {
+      font-family: var(--ff-serif);
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .category-item p {
+      font-size: 0.8rem;
+      color: #888;
+    }
+
+    /* --- Style Story Section --- */
+    .style-story {
+      position: relative;
+      height: 700px;
+      background: url('../assets/images/lookbook_hero_bg.png') no-repeat center center/cover fixed;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 5rem;
+    }
+
+    .style-story::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(253, 251, 247, 0.4);
+    }
+
+    .style-story-content {
+      position: relative;
+      z-index: 2;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 5rem;
+      max-width: 700px;
+      text-align: center;
+      box-shadow: 0 30px 100px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(10px);
+    }
+
+    .style-story h3 {
+      font-family: var(--ff-serif);
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .btn-story {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 1rem 2.5rem;
+      border: 1px solid var(--clr-gold);
+      color: var(--clr-gold);
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      letter-spacing: 2px;
+      text-decoration: none;
+      transition: all 0.4s ease;
+    }
+
+    .btn-story:hover {
+      background: var(--clr-gold);
+      color: #fff;
+    }
+
+    .quote-section {
+      text-align: center;
+      padding: 6rem 0;
+      background: var(--clr-ivory);
+    }
+
+    .quote-text {
+      font-family: var(--ff-serif);
+      font-size: 2rem;
+      font-style: italic;
+      color: #444;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 992px) {
+      .category-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .lookbook-hero h1 {
+        font-size: 3.5rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="page-loader"
+    style="position:fixed;inset:0;background:#fff;z-index:9999;display:flex;align-items:center;justify-content:center;transition:opacity 0.6s ease;">
+    <div style="font-family:'Playfair Display',serif;font-size:2rem;letter-spacing:4px;color:#121212;">HMS</div>
+  </div>
+
+  <!-- ========== NAVBAR ========== -->
+  <nav class="luxury-nav">
+    <div class="nav-container">
+      <a class="navbar-brand" href="../index.html">HMS</a>
+
+      <ul class="nav-links">
+        <li><a class="nav-link-luxury" href="../index.html">Home</a></li>
+        <li><a class="nav-link-luxury" href="../home2.html">Home 2</a></li>
+        <li><a class="nav-link-luxury" href="about.html">About</a></li>
+        <li><a class="nav-link-luxury active" href="lookbook.html">Lookbook</a></li>
+        <li><a class="nav-link-luxury" href="services.html">Services</a></li>
+        <li><a class="nav-link-luxury" href="blog.html">Journal</a></li>
+        <li><a class="nav-link-luxury" href="booking.html">Booking</a></li>
+        <li><a class="nav-link-luxury" href="contact.html">Contact</a></li>
+      </ul>
+
+      <div class="nav-controls">
+        <button class="btn-toggle-ui" data-theme-toggle><span class="theme-icon">🌙</span></button>
+        <button class="btn-toggle-ui" data-rtl-toggle><span class="rtl-label">RTL Mode</span></button>
+        <a href="login.html" class="btn-luxury" style="padding: 0.6rem 1.5rem; font-size: 0.65rem;">Login</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ========== PAGE HERO ========== -->
+  <header class="lookbook-hero">
+    <div class="lookbook-hero-content container reveal">
+      <span
+        style="font-family:var(--ff-sans);font-size:0.7rem;letter-spacing:5px;text-transform:uppercase;color:var(--clr-gold);margin-bottom:1.5rem;display:block;">Curated
+        Collections</span>
+      <h1>The Lookbook</h1>
+      <div class="divider-gold"></div>
+    </div>
+  </header>
+
+  <!-- ========== GALLERY SECTION ========== -->
+  <section class="gallery-container">
+    <div class="container">
+
+      <!-- MINI SECTION (COLLECTION STORY) -->
+      <div class="collection-header reveal">
+        <h2>Curated by Occasion</h2>
+        <p>From bridal elegance to contemporary statements, each collection reflects a unique expression of style,
+          blending heritage craftsmanship with visionary design.</p>
+
+        <div class="category-grid mt-5">
+          <div class="category-item">
+            <h4>Bridal</h4>
+            <p>Timeless and graceful</p>
+          </div>
+          <div class="category-item">
+            <h4>Vintage</h4>
+            <p>Classic heritage forms</p>
+          </div>
+          <div class="category-item">
+            <h4>Racing</h4>
+            <p>Bold and expressive</p>
+          </div>
+          <div class="category-item">
+            <h4>Contemporary</h4>
+            <p>Modern minimalism</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Filter UI -->
+      <div class="d-flex justify-content-center gap-2 mb-5 flex-wrap reveal">
+        <button class="btn-toggle-ui" style="background:var(--clr-gold); color:#fff; border-color:var(--clr-gold);">All
+          Pieces</button>
+        <button class="btn-toggle-ui">Bridal</button>
+        <button class="btn-toggle-ui">Vintage</button>
+        <button class="btn-toggle-ui">Racing</button>
+        <button class="btn-toggle-ui">Contemporary</button>
+      </div>
+
+      <!-- Gallery Grid -->
+      <div class="section-grid">
+        <!-- Card 1 -->
+        <div class="reveal">
+          <div class="hat-card">
+            <span class="tag-label">Bridal Exclusive</span>
+            <div class="hat-card-img">
+              <img src="../../../brain/67b50efb-00c7-4b1a-b64b-607871d6ae68/bridal_ivory_fascinator_1775022410934.png"
+                alt="Ivory Charm" />
+              <div class="hat-card-overlay">
+                <span class="view-details-text">View Details</span>
+              </div>
+            </div>
+            <div class="hat-card-body">
+              <h3 class="hat-card-title">Ivory Fascinator</h3>
+              <p class="hat-card-caption">Handcrafted silk with ostrich feather detailing and a delicate tulle veil.</p>
+              <p class="hat-card-price">Bridal Collection</p>
+            </div>
+          </div>
+        </div>
+        <!-- Card 2 -->
+        <div class="reveal">
+          <div class="hat-card">
+            <span class="tag-label">Bespoke</span>
+            <div class="hat-card-img">
+              <img
+                src="../../../brain/67b50efb-00c7-4b1a-b64b-607871d6ae68/vintage_cloche_emerald_green_1775022429564.png"
+                alt="Velvet Empress" />
+              <div class="hat-card-overlay">
+                <span class="view-details-text">View Details</span>
+              </div>
+            </div>
+            <div class="hat-card-body">
+              <h3 class="hat-card-title">Velvet Cloche</h3>
+              <p class="hat-card-caption">Deep emerald velvet block with hand-stitched silk flowers and vintage lace.
+              </p>
+              <p class="hat-card-price">Vintage Edit</p>
+            </div>
+          </div>
+        </div>
+        <!-- Card 3 -->
+        <div class="reveal">
+          <div class="hat-card">
+            <span class="tag-label">Limited Edition</span>
+            <div class="hat-card-img">
+              <img src="https://images.unsplash.com/photo-1549439602-43ebca2327af?w=800&q=80" alt="Raffia Hat" />
+              <div class="hat-card-overlay">
+                <span class="view-details-text">View Details</span>
+              </div>
+            </div>
+            <div class="hat-card-body">
+              <h3 class="hat-card-title">Wide Brim Raffia</h3>
+              <p class="hat-card-caption">Natural woven straw with a premium silk grosgrain ribbon and structured brim.
+              </p>
+              <p class="hat-card-price">Casual Luxury</p>
+            </div>
+          </div>
+        </div>
+        <!-- Card 4 -->
+        <div class="reveal">
+          <div class="hat-card">
+            <span class="tag-label">Bespoke</span>
+            <div class="hat-card-img">
+              <img src="https://images.unsplash.com/photo-1517423568366-8b83523034fd?w=800&q=80" alt="Modern Fedora" />
+              <div class="hat-card-overlay">
+                <span class="view-details-text">View Details</span>
+              </div>
+            </div>
+            <div class="hat-card-body">
+              <h3 class="hat-card-title">Urban Fedora</h3>
+              <p class="hat-card-caption">Sculpted felt with a minimalist geometric finish, perfect for the modern
+                silhouette.</p>
+              <p class="hat-card-price">Contemporary</p>
+            </div>
+          </div>
+        </div>
+        <!-- Card 5 -->
+        <div class="reveal">
+          <div class="hat-card">
+            <span class="tag-label">Limited Edition</span>
+            <div class="hat-card-img">
+              <img src="https://images.unsplash.com/photo-1520006403991-2ad26b057c7f?w=800&q=80" alt="Ascot Hat" />
+              <div class="hat-card-overlay">
+                <span class="view-details-text">View Details</span>
+              </div>
+            </div>
+            <div class="hat-card-body">
+              <h3 class="hat-card-title">Ascot Plume</h3>
+              <p class="hat-card-caption">Dramatic architectural feathers set on a fine silk base for race day elegance.
+              </p>
+              <p class="hat-card-price">Racing & Polo</p>
+            </div>
+          </div>
+        </div>
+        <!-- Card 6 -->
+        <div class="reveal">
+          <div class="hat-card">
+            <span class="tag-label">Bridal Exclusive</span>
+            <div class="hat-card-img">
+              <img src="https://images.unsplash.com/photo-1511208687438-2c5a5abb810c?w=800&q=80" alt="Pearl Headband" />
+              <div class="hat-card-overlay">
+                <span class="view-details-text">View Details</span>
+              </div>
+            </div>
+            <div class="hat-card-body">
+              <h3 class="hat-card-title">Pearl Band</h3>
+              <p class="hat-card-caption">Hand-encrusted freshwater pearls on a silk satin band, shimmering under
+                daylight.</p>
+              <p class="hat-card-price">Bridal</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-5 reveal">
+        <a href="booking.html" class="btn-luxury" style="padding: 1.2rem 3rem;">Enquire About a Piece</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== STYLE STORY SECTION ========== -->
+  <section class="style-story reveal">
+    <div class="style-story-content">
+      <h3>The Art of Expression</h3>
+      <div class="divider-gold"></div>
+      <p>Each piece is designed to embody individuality, blending heritage craftsmanship with modern elegance. Our
+        artisans spend hundreds of hours sculpting every curve and stitching every detail.</p>
+      <p style="font-size: 0.9rem; color: #888;">We believe a hat is more than an accessory; it's a testament to the
+        wearer's unique journey and style legacy.</p>
+      <a href="about.html" class="btn-story">Explore the Story</a>
+    </div>
+  </section>
+
+  <!-- ========== QUOTE SECTION ========== -->
+  <section class="quote-section reveal">
+    <div class="container">
+      <p class="quote-text">“Elegance is the only beauty that never fades.”</p>
+      <div class="divider-gold" style="width: 40px; margin-top: 3rem;"></div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="luxury-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="reveal">
+          <a href="../index.html" class="footer-brand">HMS</a>
+          <p style="max-width:300px; color:var(--clr-text-muted); margin-bottom:2rem; font-size:0.9rem;">Preserving the
+            legacy of artisanal millinery with a focus on modern excellence.</p>
+          <div class="d-flex gap-3">
+            <a href="#" class="btn-toggle-ui" style="width:40px; height:40px; padding:0; justify-content:center;"><i
+                class="bi bi-instagram"></i></a>
+            <a href="#" class="btn-toggle-ui" style="width:40px; height:40px; padding:0; justify-content:center;"><i
+                class="bi bi-pinterest"></i></a>
+            <a href="#" class="btn-toggle-ui" style="width:40px; height:40px; padding:0; justify-content:center;"><i
+                class="bi bi-facebook"></i></a>
+          </div>
+        </div>
+        <div class="reveal">
+          <h4
+            style="font-size:1rem; text-transform:uppercase; letter-spacing:2px; margin-bottom:1.8rem; font-family:var(--ff-sans);">
+            Navigate</h4>
+          <a href="about.html" class="footer-link">Our Story</a>
+          <a href="lookbook.html" class="footer-link">Lookbook</a>
+          <a href="services.html" class="footer-link">Services</a>
+          <a href="blog.html" class="footer-link">Journal</a>
+        </div>
+        <div class="reveal">
+          <h4
+            style="font-size:1rem; text-transform:uppercase; letter-spacing:2px; margin-bottom:1.8rem; font-family:var(--ff-sans);">
+            Support</h4>
+          <a href="faq.html" class="footer-link">FAQ</a>
+          <a href="booking.html" class="footer-link">Booking</a>
+          <a href="contact.html" class="footer-link">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/js/script.js"></script>
+</body>
+
+</html>

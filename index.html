@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Custom Hat & Millinery Studio | Bespoke Headwear</title>
+  <meta name="description"
+    content="Artisan millinery studio specializing in bespoke hats, couture bridal pieces, and custom-made headwear for all occasions." />
+
+  <!-- Bootstrap 5 (For Grid) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body>
+
+  <!-- ========== PAGE LOADER ========== -->
+  <div id="page-loader"
+    style="position:fixed;inset:0;background:#fff;z-index:9999;display:flex;align-items:center;justify-content:center;transition:opacity 0.6s ease;">
+    <div style="font-family:'Playfair Display',serif;font-size:2rem;letter-spacing:4px;color:#121212;">HMS</div>
+  </div>
+
+  <!-- ========== BACK TO TOP ========== -->
+  <button class="back-to-top" aria-label="Back to top"
+    style="position:fixed;bottom:2rem;right:2rem;z-index:100;opacity:0;transition:opacity 0.4s ease;background:var(--clr-accent);color:#fff;border:none;border-radius:50%;width:45px;height:45px;display:flex;align-items:center;justify-content:center;cursor:pointer;">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+
+  <!-- ========== NAVBAR ========== -->
+  <nav class="luxury-nav">
+    <div class="nav-container">
+      <a class="navbar-brand" href="index.html">HMS</a>
+
+      <ul class="nav-links">
+        <li><a class="nav-link-luxury active" href="index.html">Home</a></li>
+        <li><a class="nav-link-luxury" href="home2.html">Home 2</a></li>
+        <li><a class="nav-link-luxury" href="pages/about.html">About</a></li>
+        <li><a class="nav-link-luxury" href="pages/lookbook.html">Lookbook</a></li>
+        <li><a class="nav-link-luxury" href="pages/services.html">Services</a></li>
+        <li><a class="nav-link-luxury" href="pages/blog.html">Journal</a></li>
+        <li><a class="nav-link-luxury" href="pages/booking.html">Booking</a></li>
+        <li><a class="nav-link-luxury" href="pages/contact.html">Contact</a></li>
+      </ul>
+
+      <div class="nav-controls">
+        <button class="btn-toggle-ui" data-theme-toggle aria-label="Toggle Theme">
+          <span class="theme-icon">🌙</span>
+        </button>
+        <button class="btn-toggle-ui" data-rtl-toggle aria-label="Toggle RTL">
+          <span class="rtl-label">RTL Mode</span>
+        </button>
+        <a href="pages/login.html" class="btn-luxury" style="padding: 0.6rem 1.5rem; font-size: 0.65rem;">Login</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ========== HERO SECTION ========== -->
+  <section class="hero-section" aria-label="Hero">
+    <div class="hero-bg-wrapper">
+      <div class="hero-bg"></div>
+    </div>
+
+    <div class="hero-content-wrapper">
+      <div class="hero-inner reveal">
+        <span class="badge-luxury">Established 2010</span>
+        <span class="hero-eyebrow">Shoreditch, London</span>
+        <h1 class="hero-title">
+          The Art of <em>Bespoke</em> Millinery
+        </h1>
+        <p
+          style="font-size:1.1rem; color:rgba(255,255,255,0.8); margin-bottom:2.5rem; font-weight:200; max-width:500px;">
+          Handcrafted hats and couture headpieces made purely to order. Experience the fusion of tradition and
+          contemporary elegance.
+        </p>
+        <div class="d-flex gap-3">
+          <a href="pages/lookbook.html" class="btn-luxury">Explore Collection</a>
+          <a href="pages/booking.html" class="btn-luxury-outline">Consultation</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FEATURED COLLECTIONS ========== -->
+  <section class="section-pad section-bg-featured">
+    <div class="container">
+      <div class="text-center mb-5 reveal">
+        <span
+          style="font-family:var(--ff-sans);font-size:0.7rem;letter-spacing:4px;text-transform:uppercase;color:var(--clr-accent);margin-bottom:1rem;display:block;">Curated
+          Selection</span>
+        <h2 style="font-size:3.2rem;margin-bottom:1rem;">Featured Designs</h2>
+        <div class="divider-gold mx-auto"></div>
+      </div>
+
+      <div class="row g-4">
+        <!-- Card 1 -->
+        <div class="col-sm-6 col-lg-3 reveal">
+          <div class="hat-card">
+            <span class="tag-limited">Limited Edition</span>
+            <div class="hat-card-img">
+              <img src="assets/images/product_editorial_1.png" alt="Bridal Fascinator" />
+            </div>
+            <div class="hat-card-body">
+              <h3 class="hat-card-title">Ivory Charm</h3>
+              <p class="hat-card-price">From £420</p>
+              <span class="img-caption">Hand-shaped wool felt</span>
+            </div>
+          </div>
+        </div>
+        <!-- Card 2 -->
+        <div class="col-sm-6 col-lg-3 reveal">
+          <div class="hat-card">
+            <div class="hat-card-img">
+              <img src="assets/images/product_editorial_2.png" alt="Vintage Velvet" />
+            </div>
+            <div class="hat-card-body">
+              <h3 class="hat-card-title">Velvet Empress</h3>
+              <p class="hat-card-price">From £310</p>
+              <span class="img-caption">Italian velvet silk</span>
+            </div>
+          </div>
+        </div>
+        <!-- Card 3 -->
+        <div class="col-sm-6 col-lg-3 reveal">
+          <div class="hat-card">
+            <span class="tag-limited">Exclusive</span>
+            <div class="hat-card-img">
+              <img src="assets/images/product_editorial_3.png" alt="Raffia Hat" />
+            </div>
+            <div class="hat-card-body">
+              <h3 class="hat-card-title">Golden Raffia</h3>
+              <p class="hat-card-price">From £195</p>
+              <span class="img-caption">Sustainable palm fibers</span>
+            </div>
+          </div>
+        </div>
+        <!-- Card 4 -->
+        <div class="col-sm-6 col-lg-3 reveal">
+          <div class="hat-card">
+            <div class="hat-card-img">
+              <img src="assets/images/product_editorial_4.png" alt="Contemporary Fedora" />
+            </div>
+            <div class="hat-card-body">
+              <h3 class="hat-card-title">Modern Fedora</h3>
+              <p class="hat-card-price">From £280</p>
+              <span class="img-caption">Premium rabbit fur felt</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SIGNATURE CRAFTSMANSHIP ========== -->
+  <section class="craftsmanship-section section-pad">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6 reveal">
+          <div class="craft-img-wrapper">
+            <img src="assets/images/craftsmanship_artistic.png" alt="Artisanal Hat Making" />
+            <div class="gold-accent-border"></div>
+          </div>
+        </div>
+        <div class="col-lg-6 reveal">
+          <span
+            style="font-family:var(--ff-sans);font-size:0.7rem;letter-spacing:4px;text-transform:uppercase;color:var(--clr-accent);margin-bottom:1.5rem;display:block;">Artisanal
+            Process</span>
+          <h2 style="font-size:3.2rem; line-height:1.1; margin-bottom:1.5rem;">Signature <br>Craftsmanship</h2>
+          <div class="divider-gold"></div>
+          <p style="font-size:1.05rem; color:var(--clr-text-muted); margin-bottom:2.5rem; max-width:550px;">
+            Every piece that leaves our studio is a testament to the time-honored traditions of millinery. We blend
+            sculptural artistry with heritage techniques to create headwear that is truly unique.
+          </p>
+          <ul class="craft-list mb-5">
+            <li>Hand-selected premium materials from ethical sources</li>
+            <li>Traditional European blocking and shaping techniques</li>
+            <li>Modern couture finishing for contemporary elegance</li>
+          </ul>
+          <a href="pages/services.html" class="btn-luxury">Explore Craft</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== STORY STRIP (PHILOSOPHY) ========== -->
+  <section class="section-pad section-bg-philosophy">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-5 reveal">
+          <div style="position:relative; padding:1.5rem;">
+            <div class="craft-img-wrapper" style="padding:0;">
+              <img src="assets/images/philosophy_bg.png" alt="Millinery Studio"
+                style="width:100%; height:auto; aspect-ratio:4/5; object-fit:cover; border-radius:var(--radius-sm); position:relative; z-index:2;" />
+              <div class="gold-accent-border" style="width:70%; height:70%; top: -15px; left: auto; right: -15px;">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-7 reveal">
+          <span
+            style="font-family:var(--ff-sans);font-size:0.7rem;letter-spacing:4px;text-transform:uppercase;color:var(--clr-accent);margin-bottom:1.5rem;display:block;">Our
+            Philosophy</span>
+          <h2 style="font-size:3.2rem; line-height:1.1; margin-bottom:2rem; color: #fff;">Crafting Identity, One
+            <br><em>Stitch</em>
+            at a Time
+          </h2>
+          <div class="testimonial-snippet">
+            "A hat is the ultimate expression of character."
+          </div>
+          <p style="font-size:1.05rem; color:rgba(255,255,255,0.8); margin-bottom:2rem; max-width:600px;">
+            Founded by master milliner Elara Voss, our studio preserves the heritage of European hat-making while
+            pushing the boundaries of contemporary fashion. Each piece is an heirloom, designed to express the soul of
+            the wearer.
+          </p>
+          <a href="pages/about.html" class="btn-luxury"
+            style="background:var(--clr-accent); color:#fff; border-color:var(--clr-accent);">Discover Our Story</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SERVICES ========== -->
+  <section class="section-pad section-bg-services">
+    <div class="container">
+      <div class="text-center mb-5 reveal">
+        <h2 style="font-size:3.2rem;">Expert Services</h2>
+        <div class="divider-gold mx-auto"></div>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-4 reveal">
+          <div
+            style="background:var(--clr-bg-alt); padding:3rem 2rem; border-radius:var(--radius-md); text-align:center; height:100%; transition:transform 0.4s ease;"
+            onmouseover="this.style.transform='translateY(-10px)'" onmouseout="this.style.transform='none'">
+            <div style="font-size:2rem; color:var(--clr-accent); margin-bottom:1.5rem;"><i class="bi bi-stars"></i>
+            </div>
+            <h3 style="font-size:1.5rem; margin-bottom:1rem;">Bespoke Millinery</h3>
+            <p style="font-size:0.9rem; color:var(--clr-text-muted); font-weight:300;">A fully personalized experience,
+              from conceptual sketches to the final handcrafted piece.</p>
+          </div>
+        </div>
+        <div class="col-md-4 reveal">
+          <div
+            style="background:var(--clr-bg-alt); padding:3rem 2rem; border-radius:var(--radius-md); text-align:center; height:100%; transition:transform 0.4s ease;"
+            onmouseover="this.style.transform='translateY(-10px)'" onmouseout="this.style.transform='none'">
+            <div style="font-size:2rem; color:var(--clr-accent); margin-bottom:1.5rem;"><i
+                class="bi bi-calendar-heart"></i></div>
+            <h3 style="font-size:1.5rem; margin-bottom:1rem;">Bridal Consultation</h3>
+            <p style="font-size:0.9rem; color:var(--clr-text-muted); font-weight:300;">Ensuring every detail of your
+              bridal headpiece harmonizes with your gown and style.</p>
+          </div>
+        </div>
+        <div class="col-md-4 reveal">
+          <div
+            style="background:var(--clr-bg-alt); padding:3rem 2rem; border-radius:var(--radius-md); text-align:center; height:100%; transition:transform 0.4s ease;"
+            onmouseover="this.style.transform='translateY(-10px)'" onmouseout="this.style.transform='none'">
+            <div style="font-size:2rem; color:var(--clr-accent); margin-bottom:1.5rem;"><i class="bi bi-tools"></i>
+            </div>
+            <h3 style="font-size:1.5rem; margin-bottom:1rem;">Restoration</h3>
+            <p style="font-size:0.9rem; color:var(--clr-text-muted); font-weight:300;">Breathing new life into cherished
+              vintage headwear with expert cleaning and repair.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="luxury-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="reveal">
+          <a href="index.html" class="footer-brand">HMS</a>
+          <p style="max-width:300px; color:var(--clr-text-muted); margin-bottom:2rem; font-size:0.9rem;">
+            Preserving the legacy of artisanal millinery with a focus on modern excellence and individual craft.
+          </p>
+          <div class="d-flex gap-3">
+            <a href="#" class="btn-toggle-ui" style="width:40px; height:40px; padding:0; justify-content:center;"><i
+                class="bi bi-instagram"></i></a>
+            <a href="#" class="btn-toggle-ui" style="width:40px; height:40px; padding:0; justify-content:center;"><i
+                class="bi bi-pinterest"></i></a>
+            <a href="#" class="btn-toggle-ui" style="width:40px; height:40px; padding:0; justify-content:center;"><i
+                class="bi bi-facebook"></i></a>
+          </div>
+        </div>
+
+        <div class="reveal">
+          <h4
+            style="font-size:1rem; text-transform:uppercase; letter-spacing:2px; margin-bottom:1.8rem; font-family:var(--ff-sans);">
+            Navigate</h4>
+          <a href="pages/about.html" class="footer-link">Our Story</a>
+          <a href="pages/lookbook.html" class="footer-link">Lookbook</a>
+          <a href="pages/services.html" class="footer-link">Services</a>
+          <a href="pages/blog.html" class="footer-link">Journal</a>
+        </div>
+
+        <div class="reveal">
+          <h4
+            style="font-size:1rem; text-transform:uppercase; letter-spacing:2px; margin-bottom:1.8rem; font-family:var(--ff-sans);">
+            Support</h4>
+          <a href="pages/faq.html" class="footer-link">FAQ</a>
+          <a href="pages/booking.html" class="footer-link">Booking</a>
+          <a href="pages/contact.html" class="footer-link">Contact Us</a>
+          <a href="#" class="footer-link">Privacy Policy</a>
+        </div>
+
+        <div class="reveal">
+          <h4
+            style="font-size:1rem; text-transform:uppercase; letter-spacing:2px; margin-bottom:1.8rem; font-family:var(--ff-sans);">
+            Visit Us</h4>
+          <p style="font-size:0.88rem; color:var(--clr-text-muted); line-height:2.2;">
+            14 Millinery Lane, Shoreditch <br>
+            London E1 6RF, UK <br>
+            <span style="color:var(--clr-accent);">hello@hmstudio.co.uk</span>
+          </p>
+        </div>
+      </div>
+
+      <div
+        style="border-top:1px solid var(--clr-border); padding-top:2rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem;">
+        <p style="font-size:0.75rem; color:var(--clr-text-muted);">© 2026 Custom Hat & Millinery Studio. All rights
+          reserved.</p>
+        <div class="d-flex gap-4">
+          <a href="#" style="font-size:0.75rem; color:var(--clr-text-muted);">Terms</a>
+          <a href="#" style="font-size:0.75rem; color:var(--clr-text-muted);">Cookies</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JS Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/script.js"></script>
+</body>
+
+</html>
