@@ -1,10 +1,9 @@
+@import 'typography.css';
+
 /* ============================================================
-   Custom Hat & Millinery Studio â€” style.css (Redesign)
+   Custom Hat & Millinery Studio — style.css (Redesign)
    Premium Luxury & High-Fashion Aesthetic
    ============================================================ */
-
-/* ---------- Google Fonts Import ---------- */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Outfit:wght@200;300;400;500;600&family=Pinyon+Script&display=swap');
 
 /* ---------- CSS Custom Properties ---------- */
 :root {
@@ -18,16 +17,18 @@
   --clr-heading: #121212;
   --clr-accent: #b5935b;
   --clr-accent-rgb: 181, 147, 91;
-  --clr-accent-gold: #d4af37;
+  --clr-accent-gold: #b5935b;
   --clr-nav-bg: rgba(253, 251, 247, 0.85);
   --clr-glass: rgba(255, 255, 255, 0.45);
   --clr-card: #ffffff;
   --clr-overlay: rgba(18, 18, 18, 0.45);
 
-  /* Typography */
-  --ff-serif: 'Playfair Display', "Times New Roman", serif;
+  /* Theme-Independent Brand Colors (Fixed for Buttons) */
+  --clr-brand-gold: #b5935b;
+  --clr-brand-gold-rgb: 181, 147, 91;
+
+  /* Typography (Overrides from typography.css) */
   --ff-script: 'Pinyon Script', cursive;
-  --ff-sans: 'Outfit', sans-serif;
 
   /* Layout & Animation */
   --container-width: 1400px;
@@ -57,8 +58,8 @@
   --clr-text: #f0f0f0;
   --clr-text-muted: #a0a0a0;
   --clr-heading: #ffffff;
-  --clr-accent: #d4af37;
-  --clr-accent-rgb: 212, 175, 55;
+  --clr-accent: #b5935b;
+  --clr-accent-rgb: 181, 147, 91;
   --clr-nav-bg: rgba(8, 8, 8, 0.88);
   --clr-glass: rgba(24, 24, 24, 0.55);
   --clr-card: #151515;
@@ -73,6 +74,12 @@
 }
 
 /* ---------- Base Styles ---------- */
+.back-to-top:hover {
+  background: var(--clr-brand-gold) !important;
+  transform: scale(1.1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
 *,
 *::before,
 *::after {
@@ -88,10 +95,10 @@ html {
 }
 
 body {
-  font-family: var(--ff-sans);
+  font-family: var(--ff-primary);
   background-color: var(--clr-bg);
   color: var(--clr-text);
-  line-height: 1.8;
+  line-height: var(--lh-base);
   transition: background-color var(--transition), color var(--transition);
   -webkit-font-smoothing: antialiased;
 }
@@ -119,10 +126,11 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--ff-serif);
-  font-weight: 500;
+  font-family: var(--ff-heading);
+  font-weight: var(--fw-medium);
   letter-spacing: -0.02em;
   color: var(--clr-heading);
+  margin-bottom: 1.5rem;
 }
 
 .script-font {
@@ -131,7 +139,9 @@ h6 {
 }
 
 p {
-  font-weight: 300;
+  font-weight: var(--fw-light);
+  font-size: var(--fs-base);
+  margin-bottom: 1.5rem;
 }
 
 a {
@@ -369,10 +379,10 @@ a {
 }
 
 .btn-social:hover {
-  background: var(--clr-bg-alt);
-  border-color: var(--clr-accent);
+  background: var(--clr-brand-gold);
+  color: #fff;
+  border-color: var(--clr-brand-gold);
   transform: translateY(-2px);
-  color: var(--clr-text);
 }
 
 .btn-social i {
@@ -383,14 +393,14 @@ a {
 .btn-luxury {
   display: inline-block;
   padding: 1rem 2.8rem;
-  background: var(--clr-accent);
+  background: var(--clr-brand-gold);
   color: #fff;
   font-family: var(--ff-sans);
   font-size: 0.8rem;
   font-weight: 500;
   letter-spacing: 3px;
   text-transform: uppercase;
-  border: 1px solid var(--clr-accent);
+  border: 1px solid var(--clr-brand-gold);
   border-radius: var(--radius-sm);
   position: relative;
   overflow: hidden;
@@ -414,8 +424,11 @@ a {
 }
 
 .btn-luxury:hover {
-  background: transparent;
-  color: var(--clr-accent);
+  background: var(--clr-brand-gold);
+  color: #fff;
+  border-color: var(--clr-brand-gold);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(var(--clr-brand-gold-rgb), 0.25);
 }
 
 .btn-luxury-outline {
@@ -433,9 +446,11 @@ a {
 }
 
 .btn-luxury-outline:hover {
-  background: #fff;
-  color: #000;
-  border-color: #fff;
+  background: var(--clr-brand-gold);
+  color: #fff;
+  border-color: var(--clr-brand-gold);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(var(--clr-brand-gold-rgb), 0.2);
 }
 
 /* ============================================================
@@ -542,8 +557,9 @@ a {
 }
 
 .btn-toggle-ui:hover {
-  border-color: var(--clr-accent);
-  color: var(--clr-accent);
+  background: var(--clr-brand-gold);
+  border-color: var(--clr-brand-gold);
+  color: #fff !important;
 }
 
 /* ============================================================
@@ -1283,12 +1299,13 @@ a {
   background: rgba(18, 18, 18, 0.95) !important;
   /* Deep luxury charcoal/black */
   backdrop-filter: blur(15px) !important;
-  border-bottom: 1px solid rgba(212, 175, 55, 0.3) !important;
+  border-bottom: 1px solid rgba(181, 147, 91, 0.3) !important;
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
 
 .luxury-nav .navbar-brand {
-  color: #D4AF37 !important; /* Signature HMS Gold */
+  color: #b5935b !important;
+  /* Signature HMS Gold */
   font-family: 'Playfair Display', serif !important;
   font-weight: 700 !important;
   font-size: 1.8rem !important;
@@ -1321,7 +1338,7 @@ a {
 
 .luxury-nav .nav-link-luxury:hover,
 .luxury-nav .nav-link-luxury.active {
-  color: #D4AF37 !important;
+  color: #b5935b !important;
 }
 
 /* Scrolled state: slightly more opaque/solid */
@@ -1402,8 +1419,9 @@ body {
 }
 
 .footer-social-link:hover {
-  border-color: var(--clr-accent-gold);
-  color: var(--clr-accent-gold);
+  background: var(--clr-brand-gold);
+  border-color: var(--clr-brand-gold);
+  color: #fff;
   transform: translateY(-3px);
 }
 
