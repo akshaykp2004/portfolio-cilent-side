@@ -148,6 +148,10 @@ a {
   color: var(--clr-accent-gold);
 }
 
+.text-muted {
+  color: var(--clr-text-muted) !important;
+}
+
 /* ---------- Utilities ---------- */
 .glass {
   background: var(--clr-glass);
@@ -1041,6 +1045,11 @@ a {
 .about-craft-bg {
   background-image: linear-gradient(rgba(247, 242, 234, 0.9), rgba(247, 242, 234, 0.9)), url('../images/bg_ivory_texture.png');
   background-size: cover;
+  transition: all 0.4s ease;
+}
+
+[data-theme="dark"] .about-craft-bg {
+  background-image: linear-gradient(rgba(10, 10, 10, 0.92), rgba(10, 10, 10, 0.92)), url('../images/bg_ivory_texture.png');
 }
 
 .vignette-overlay {
