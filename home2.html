@@ -33,7 +33,9 @@
   <!-- ========== NAVBAR ========== -->
   <nav class="luxury-nav">
     <div class="nav-container">
-      <a class="navbar-brand" href="index.html">HMS</a>
+      <a class="navbar-brand" href="index.html">
+        <img src="assets/images/download (1).png" alt="HMS Studio Logo" class="studio-logo">
+      </a>
 
       <ul class="nav-links">
         <li><a class="nav-link-luxury" href="index.html">Home</a></li>
@@ -94,8 +96,7 @@
       <div class="row g-4">
         <div class="col-md-4 reveal">
           <div class="collection-card">
-            <img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=800&q=80"
-              alt="Bridal Collection" />
+            <img src="assets/images/col_noir_bridal.png" alt="Noir Bridal Collection" />
             <div class="collection-overlay">
               <h3 class="collection-title">Noir Bridal</h3>
               <a href="pages/lookbook.html" class="collection-link">View Details</a>
@@ -104,8 +105,7 @@
         </div>
         <div class="col-md-4 reveal">
           <div class="collection-card">
-            <img src="https://images.unsplash.com/photo-1584184924103-e310d9dc82fc?w=800&q=80"
-              alt="Classic Collection" />
+            <img src="assets/images/col_old_money.png" alt="Old Money Collection" />
             <div class="collection-overlay">
               <h3 class="collection-title">Old Money</h3>
               <a href="pages/lookbook.html" class="collection-link">View Details</a>
@@ -114,8 +114,7 @@
         </div>
         <div class="col-md-4 reveal">
           <div class="collection-card">
-            <img src="https://images.unsplash.com/photo-1566206091558-7f218b696731?w=800&q=80"
-              alt="Racing Collection" />
+            <img src="assets/images/col_ascot_gold.png" alt="Ascot Gold Collection" />
             <div class="collection-overlay">
               <h3 class="collection-title">Ascot Gold</h3>
               <a href="pages/lookbook.html" class="collection-link">View Details</a>
@@ -139,7 +138,7 @@
       <!-- Step 1 -->
       <div class="process-step reveal">
         <div class="process-img">
-          <img src="https://images.unsplash.com/photo-1558171813-4ea0f9a7d3a0?w=800&q=80" alt="Hat Blocking" />
+          <img src="assets/images/process_blocking.png" alt="Hand Blocking a Luxury Felt Hat" />
         </div>
         <div class="process-text">
           <div class="process-number">01</div>
@@ -154,7 +153,7 @@
       <!-- Step 2 -->
       <div class="process-step reveal">
         <div class="process-img">
-          <img src="https://images.unsplash.com/photo-1594938298603-c8148c4b5d5a?w=800&q=80" alt="Hat Trimming" />
+          <img src="assets/images/process_trimming.png" alt="Couture Hat Trimming Detail" />
         </div>
         <div class="process-text">
           <div class="process-number">02</div>
@@ -169,7 +168,7 @@
       <!-- Step 3 -->
       <div class="process-step reveal">
         <div class="process-img">
-          <img src="https://images.unsplash.com/photo-1521369909029-2afed882baee?w=800&q=80" alt="Final Fitting" />
+          <img src="assets/images/process_fitting.png" alt="Luxury Millinery Studio Fitting" />
         </div>
         <div class="process-text">
           <div class="process-number">03</div>
@@ -201,52 +200,61 @@
   <footer class="luxury-footer">
     <div class="container">
       <div class="footer-grid">
+        <!-- Brand Col -->
         <div class="reveal">
-          <a href="index.html" class="footer-brand">HMS</a>
-          <p style="max-width:300px; color:var(--clr-text-muted); margin-bottom:2rem; font-size:0.9rem;">
+          <a href="index.html" class="navbar-brand">
+            <img src="assets/images/download (1).png" alt="HMS Studio Logo" class="footer-brand-logo">
+          </a>
+          <p class="footer-tagline">
             Preserving the legacy of artisanal millinery with a focus on modern excellence and individual craft.
           </p>
           <div class="d-flex gap-3">
-            <a href="#" class="btn-toggle-ui" style="width:40px; height:40px; padding:0; justify-content:center;"><i
-                class="bi bi-instagram"></i></a>
-            <a href="#" class="btn-toggle-ui" style="width:40px; height:40px; padding:0; justify-content:center;"><i
-                class="bi bi-pinterest"></i></a>
-            <a href="#" class="btn-toggle-ui" style="width:40px; height:40px; padding:0; justify-content:center;"><i
-                class="bi bi-facebook"></i></a>
+            <a href="#" class="footer-social-link"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="footer-social-link"><i class="bi bi-pinterest"></i></a>
+            <a href="#" class="footer-social-link"><i class="bi bi-facebook"></i></a>
           </div>
         </div>
+
+        <!-- Navigate -->
         <div class="reveal">
-          <h4
-            style="font-size:1rem; text-transform:uppercase; letter-spacing:2px; margin-bottom:1.8rem; font-family:var(--ff-sans);">
-            Navigate</h4>
-          <a href="about.html" class="footer-link">Our Story</a>
-          <a href="lookbook.html" class="footer-link">Lookbook</a>
-          <a href="services.html" class="footer-link">Services</a>
-          <a href="blog.html" class="footer-link">Journal</a>
+          <h4 class="footer-heading">Navigate</h4>
+          <ul class="footer-list">
+            <li class="footer-list-item"><a href="pages/about.html" class="footer-nav-link">Our Story</a></li>
+            <li class="footer-list-item"><a href="pages/lookbook.html" class="footer-nav-link">Lookbook</a></li>
+            <li class="footer-list-item"><a href="pages/services.html" class="footer-nav-link">Services</a></li>
+            <li class="footer-list-item"><a href="pages/blog.html" class="footer-nav-link">Journal</a></li>
+          </ul>
         </div>
+
+        <!-- Support -->
         <div class="reveal">
-          <h4
-            style="font-size:1rem; text-transform:uppercase; letter-spacing:2px; margin-bottom:1.8rem; font-family:var(--ff-sans);">
-            Support</h4>
-          <a href="pages/faq.html" class="footer-link">FAQ</a>
-          <a href="pages/booking.html" class="footer-link">Booking</a>
-          <a href="pages/contact.html" class="footer-link">Contact Us</a>
+          <h4 class="footer-heading">Support</h4>
+          <ul class="footer-list">
+            <li class="footer-list-item"><a href="pages/faq.html" class="footer-nav-link">FAQ</a></li>
+            <li class="footer-list-item"><a href="pages/booking.html" class="footer-nav-link">Booking</a></li>
+            <li class="footer-list-item"><a href="pages/contact.html" class="footer-nav-link">Contact Us</a></li>
+            <li class="footer-list-item"><a href="#" class="footer-nav-link">Privacy Policy</a></li>
+          </ul>
         </div>
+
+        <!-- Visit Us -->
         <div class="reveal">
-          <h4
-            style="font-size:1rem; text-transform:uppercase; letter-spacing:2px; margin-bottom:1.8rem; font-family:var(--ff-sans);">
-            Visit Us</h4>
-          <p style="font-size:0.88rem; color:var(--clr-text-muted); line-height:2.2;">
+          <h4 class="footer-heading">Visit Us</h4>
+          <p class="footer-description">
             14 Millinery Lane, Shoreditch <br>
             London E1 6RF, UK <br>
-            <span style="color:var(--clr-accent);">hello@hmstudio.co.uk</span>
+            <a href="mailto:hello@hmstudio.co.uk" class="footer-email-link">hello@hmstudio.co.uk</a>
           </p>
         </div>
       </div>
-      <div
-        style="border-top:1px solid var(--clr-border); padding-top:2rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem;">
-        <p style="font-size:0.75rem; color:var(--clr-text-muted);">© 2025 Custom Hat & Millinery Studio. All rights
-          reserved.</p>
+
+      <!-- Bottom Bar -->
+      <div class="footer-bottom">
+        <p class="footer-copyright">© 2026 Custom Hat & Millinery Studio. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="#" class="footer-meta-link">Terms</a>
+          <a href="#" class="footer-meta-link">Cookies</a>
+        </div>
       </div>
     </div>
   </footer>

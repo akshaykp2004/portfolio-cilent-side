@@ -39,6 +39,13 @@
   --shadow-md: 0 12px 40px rgba(0, 0, 0, 0.1);
   --transition: 0.45s cubic-bezier(0.22, 1, 0.36, 1);
   --transition-fast: 0.25s linear;
+
+  /* Footer Theme (Light) */
+  --clr-footer-bg: #ffffff;
+  --clr-footer-text: #121212;
+  --clr-footer-sub: rgba(18, 18, 18, 0.5);
+  --clr-footer-meta: rgba(18, 18, 18, 0.3);
+  --clr-footer-border: rgba(18, 18, 18, 0.1);
 }
 
 /* ---------- Dark Mode (Obsidian & Bronze) ---------- */
@@ -56,6 +63,13 @@
   --clr-glass: rgba(24, 24, 24, 0.55);
   --clr-card: #151515;
   --clr-overlay: rgba(0, 0, 0, 0.65);
+
+  /* Footer Theme (Dark) */
+  --clr-footer-bg: #0a0a0a;
+  --clr-footer-text: #ffffff;
+  --clr-footer-sub: rgba(255, 255, 255, 0.5);
+  --clr-footer-meta: rgba(255, 255, 255, 0.3);
+  --clr-footer-border: rgba(255, 255, 255, 0.05);
 }
 
 /* ---------- Base Styles ---------- */
@@ -569,7 +583,13 @@ a {
 }
 
 .hero-inner {
-  max-width: 700px;
+  max-width: 800px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.hero-inner .d-flex {
+  justify-content: center;
 }
 
 .hero-eyebrow {
@@ -884,6 +904,7 @@ a {
   color: var(--clr-accent-gold);
   text-transform: uppercase;
 }
+
 /* ============================================================
    SIGNATURE CRAFTSMANSHIP & MICRO CONTENT
    ============================================================ */
@@ -1234,6 +1255,7 @@ a {
   background-image: none !important;
   background-color: transparent !important;
 }
+
 .luxury-nav.scrolled {
   background-color: rgba(255, 255, 255, 0.95) !important;
   background-image: none !important;
@@ -1249,7 +1271,8 @@ a {
   left: 0 !important;
   width: 100% !important;
   z-index: 9999 !important;
-  background: rgba(18, 18, 18, 0.95) !important; /* Deep luxury charcoal/black */
+  background: rgba(18, 18, 18, 0.95) !important;
+  /* Deep luxury charcoal/black */
   backdrop-filter: blur(15px) !important;
   border-bottom: 1px solid rgba(212, 175, 55, 0.3) !important;
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
@@ -1262,6 +1285,21 @@ a {
   font-size: 1.8rem !important;
   text-transform: uppercase !important;
   letter-spacing: 4px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 15px !important;
+}
+
+.studio-logo {
+  height: 44px;
+  width: auto;
+  border-radius: 4px;
+  transition: transform 0.3s ease;
+  background: transparent !important;
+}
+
+.navbar-brand:hover .studio-logo {
+  transform: scale(1.05);
 }
 
 .luxury-nav .nav-link-luxury {
@@ -1272,7 +1310,7 @@ a {
   transition: color 0.3s ease !important;
 }
 
-.luxury-nav .nav-link-luxury:hover, 
+.luxury-nav .nav-link-luxury:hover,
 .luxury-nav .nav-link-luxury.active {
   color: #D4AF37 !important;
 }
@@ -1281,7 +1319,7 @@ a {
 .luxury-nav.scrolled {
   background: #121212 !important;
   padding: 1rem 0 !important;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.5) !important;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5) !important;
 }
 
 /* Ensure navigation is on top */
@@ -1290,7 +1328,150 @@ body {
 }
 
 /* --- Luxury Solid Navbar Overrides --- */
-.luxury-nav .navbar-brand { color: #fff !important; font-family: inherit !important; }
-.luxury-nav .nav-link-luxury { color: rgba(255, 255, 255, 0.85) !important; }
-.luxury-nav .nav-link-luxury:hover, .luxury-nav .nav-link-luxury.active { color: var(--clr-accent) !important; }
-.btn-toggle-ui { border-color: rgba(255, 255, 255, 0.2) !important; color: #fff !important; }
+.luxury-nav .navbar-brand {
+  color: #fff !important;
+  font-family: inherit !important;
+}
+
+.luxury-nav .nav-link-luxury {
+  color: rgba(255, 255, 255, 0.85) !important;
+}
+
+.luxury-nav .nav-link-luxury:hover,
+.luxury-nav .nav-link-luxury.active {
+  color: var(--clr-accent) !important;
+}
+
+.btn-toggle-ui {
+  border-color: rgba(255, 255, 255, 0.2) !important;
+  color: #fff !important;
+}
+
+/* ---------- Luxury Footer System ---------- */
+.luxury-footer {
+  padding: 100px 0 50px;
+  background-color: var(--clr-footer-bg);
+  border-top: 1px solid var(--clr-footer-border);
+  transition: all 0.5s ease;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 60px;
+  margin-bottom: 80px;
+}
+
+.footer-brand-logo {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+  margin-bottom: 2rem;
+  display: block;
+}
+
+.footer-tagline {
+  color: var(--clr-footer-sub);
+  font-size: 0.85rem;
+  line-height: 1.8;
+  margin-bottom: 2.5rem;
+  max-width: 280px;
+}
+
+.footer-social-link {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid var(--clr-footer-sub);
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  color: var(--clr-footer-text);
+  transition: all 0.3s ease;
+  font-size: 0.8rem;
+  text-decoration: none;
+}
+
+.footer-social-link:hover {
+  border-color: var(--clr-accent-gold);
+  color: var(--clr-accent-gold);
+  transform: translateY(-3px);
+}
+
+.footer-heading {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--clr-footer-text);
+  margin-bottom: 2.5rem;
+  font-weight: 600;
+}
+
+.footer-list {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-list-item {
+  margin-bottom: 1.2rem;
+}
+
+.footer-nav-link {
+  color: var(--clr-footer-sub);
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: color 0.3s ease;
+}
+
+.footer-nav-link:hover {
+  color: var(--clr-footer-text);
+}
+
+.footer-description {
+  color: var(--clr-footer-sub);
+  font-size: 0.85rem;
+  line-height: 2.2;
+  font-weight: 300;
+}
+
+.footer-email-link {
+  color: var(--clr-accent-gold);
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.footer-email-link:hover {
+  opacity: 0.8;
+}
+
+.footer-bottom {
+  border-top: 1px solid var(--clr-footer-border);
+  padding-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer-copyright {
+  font-size: 0.75rem;
+  color: var(--clr-footer-meta);
+}
+
+.footer-bottom-links {
+  display: flex;
+  gap: 30px;
+}
+
+.footer-meta-link {
+  font-size: 0.75rem;
+  color: var(--clr-footer-meta);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+/* Logo Visibility (Standardized) */
+.footer-brand-logo {
+  transition: opacity 0.3s ease;
+}

@@ -27,9 +27,10 @@
     }
 
     body {
-      background-color: var(--clr-ivory);
+      background-color: var(--clr-bg);
       font-family: var(--ff-sans);
-      color: #333;
+      color: var(--clr-text);
+      transition: background-color 0.4s ease, color 0.4s ease;
     }
 
     /* --- Hero Section --- */
@@ -40,15 +41,15 @@
       align-items: center;
       justify-content: center;
       overflow: hidden;
-      background: url('../assets/images/lookbook_hero_bg.png') no-repeat center center/cover;
+      background: url('../assets/images/lookbook_hero_bg_dark.png') no-repeat center center/cover;
     }
 
     .lookbook-hero::before {
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(to bottom, rgba(253, 251, 247, 0.7) 0%, rgba(253, 251, 247, 0.85) 100%);
-      backdrop-filter: blur(5px);
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.65) 100%);
+      backdrop-filter: blur(8px);
       z-index: 1;
     }
 
@@ -62,25 +63,32 @@
       font-family: var(--ff-serif);
       font-size: 5rem;
       font-weight: 400;
-      color: #1a1a1a;
+      color: #fff;
+      text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
       letter-spacing: -1px;
       margin-bottom: 0.5rem;
     }
 
     /* --- Gallery Container --- */
     .gallery-container {
-      background: var(--clr-beige) url('../assets/images/lookbook_hero_bg.png') no-repeat center center/cover;
-      background-attachment: fixed;
+      background: var(--clr-bg);
       padding: 10rem 0;
       position: relative;
+      transition: background-color 0.4s ease;
     }
 
     .gallery-container::after {
       content: '';
       position: absolute;
       inset: 0;
-      background: rgba(253, 251, 247, 0.94);
+      background: var(--clr-bg);
+      opacity: 0.05;
       z-index: 1;
+    }
+
+    [data-theme="dark"] .gallery-container::after {
+      background: rgba(8, 8, 8, 0.92);
+      opacity: 1;
     }
 
     .gallery-container .container {
@@ -88,28 +96,17 @@
       z-index: 2;
     }
 
-    .gallery-container::before {
-      content: '';
-      position: absolute;
-      top: -30px;
-      left: 0;
-      right: 0;
-      height: 60px;
-      background: var(--clr-beige);
-      border-radius: 50% / 100% 100% 0 0;
-      box-shadow: 0 -15px 30px rgba(0, 0, 0, 0.02);
-      z-index: 2;
-    }
+
 
     /* --- Card Style Enhancements --- */
     .hat-card {
-      background: #fff;
+      background: var(--clr-surface);
       border-radius: 12px;
       overflow: hidden;
-      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
+      box-shadow: var(--shadow-sm);
       transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
       position: relative;
-      border: 1px solid rgba(212, 175, 55, 0.05);
+      border: 1px solid var(--clr-border);
       cursor: pointer;
     }
 
@@ -178,19 +175,19 @@
 
     .hat-card-body {
       padding: 2rem;
-      background: #fff;
+      background: var(--clr-surface);
     }
 
     .hat-card-title {
       font-family: var(--ff-serif);
       font-size: 1.4rem;
       margin-bottom: 0.5rem;
-      color: #1a1a1a;
+      color: var(--clr-heading);
     }
 
     .hat-card-caption {
       font-size: 0.85rem;
-      color: #777;
+      color: var(--clr-text-muted);
       margin-bottom: 1rem;
       line-height: 1.5;
     }
@@ -214,6 +211,7 @@
       font-family: var(--ff-serif);
       font-size: 3rem;
       margin-bottom: 2rem;
+      color: var(--clr-heading);
     }
 
     .divider-gold {
@@ -238,40 +236,141 @@
       font-family: var(--ff-serif);
       font-size: 1.1rem;
       margin-bottom: 0.5rem;
+      color: var(--clr-heading);
     }
 
     .category-item p {
       font-size: 0.8rem;
-      color: #888;
+      color: var(--clr-text-muted);
     }
 
     /* --- Style Story Section --- */
     .style-story {
       position: relative;
       height: 700px;
-      background: url('../assets/images/lookbook_hero_bg.png') no-repeat center center/cover fixed;
+      background: var(--clr-bg-alt);
       display: flex;
       align-items: center;
       justify-content: center;
       margin-top: 5rem;
     }
 
+    /* --- Signature Section --- */
+    .signature-section {
+      padding: 10rem 0 6rem;
+      background: transparent;
+      position: relative;
+      z-index: 2;
+    }
+
+    .signature-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr 1fr;
+      gap: 3rem;
+      align-items: center;
+      margin-top: 4rem;
+    }
+
+    .signature-item.featured {
+      transform: translateY(-40px);
+    }
+
+    .signature-card {
+      position: relative;
+      border-radius: 4px;
+      overflow: hidden;
+      aspect-ratio: 4/5.5;
+      box-shadow: 0 40px 100px rgba(0, 0, 0, 0.6);
+      transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+      border: 1px solid rgba(212, 175, 55, 0.1);
+    }
+
+    .signature-card:hover {
+      transform: scale(1.05) translateY(-5px);
+      box-shadow: 0 50px 120px rgba(212, 175, 55, 0.2);
+      border-color: var(--clr-gold);
+    }
+
+    .signature-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .signature-card:hover img {
+      transform: scale(1.1);
+    }
+
+    .signature-card-content {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 4rem 2.5rem 2.5rem;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 20%, transparent 100%);
+      color: #fff;
+      transform: translateY(10px);
+      opacity: 0.9;
+      transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .signature-card-content h3 {
+      font-family: var(--ff-serif);
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+      color: #fff;
+    }
+
+    .signature-card-content p {
+      font-size: 0.85rem;
+      color: var(--clr-gold-light);
+      margin: 0;
+      letter-spacing: 0.5px;
+      line-height: 1.4;
+    }
+
+    @media (max-width: 1200px) {
+      .signature-grid {
+        gap: 2rem;
+      }
+    }
+
+    @media (max-width: 992px) {
+      .signature-grid {
+        grid-template-columns: 1fr;
+        gap: 5rem;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .signature-item.featured {
+        transform: none;
+      }
+
+      .signature-card {
+        aspect-ratio: 4/5;
+      }
+    }
+
     .style-story::before {
       content: '';
       position: absolute;
       inset: 0;
-      background: rgba(253, 251, 247, 0.4);
+      background: rgba(0, 0, 0, 0.6);
     }
 
     .style-story-content {
       position: relative;
       z-index: 2;
-      background: rgba(255, 255, 255, 0.9);
+      background: var(--clr-surface);
       padding: 5rem;
       max-width: 700px;
       text-align: center;
-      box-shadow: 0 30px 100px rgba(0, 0, 0, 0.1);
+      box-shadow: var(--shadow-md);
       backdrop-filter: blur(10px);
+      border: 1px solid var(--clr-border);
     }
 
     .style-story h3 {
@@ -301,14 +400,14 @@
     .quote-section {
       text-align: center;
       padding: 6rem 0;
-      background: var(--clr-ivory);
+      background: var(--clr-bg);
     }
 
     .quote-text {
       font-family: var(--ff-serif);
       font-size: 2rem;
       font-style: italic;
-      color: #444;
+      color: var(--clr-heading);
       max-width: 700px;
       margin: 0 auto;
     }
@@ -335,7 +434,9 @@
   <!-- ========== NAVBAR ========== -->
   <nav class="luxury-nav">
     <div class="nav-container">
-      <a class="navbar-brand" href="../index.html">HMS</a>
+      <a class="navbar-brand" href="../index.html">
+        <img src="../assets/images/download (1).png" alt="HMS Studio Logo" class="studio-logo">
+      </a>
 
       <ul class="nav-links">
         <li><a class="nav-link-luxury" href="../index.html">Home</a></li>
@@ -369,6 +470,54 @@
 
   <!-- ========== GALLERY SECTION ========== -->
   <section class="gallery-container">
+    <!-- ========== SIGNATURE SECTION ========== -->
+    <div class="signature-section reveal">
+      <div class="container">
+        <div class="text-center mb-5">
+          <span
+            style="font-family:var(--ff-sans);font-size:0.7rem;letter-spacing:6px;text-transform:uppercase;color:var(--clr-gold);margin-bottom:1.5rem;display:block;">Exclusive
+            Edition</span>
+          <h2
+            style="font-family:var(--ff-serif); color:var(--clr-heading); font-size:4rem; margin-bottom:1rem; font-weight:400;">
+            Signature Highlights</h2>
+          <div class="divider-gold" style="width: 80px;"></div>
+        </div>
+
+        <div class="signature-grid">
+          <!-- Item 1 -->
+          <div class="signature-item">
+            <div class="signature-card">
+              <img src="../assets/images/sig_1.png" alt="Gold Couture Fascinator">
+              <div class="signature-card-content">
+                <h3>Gold Couture</h3>
+                <p>Hand-embroidered silk with 24k gold leaf and ostrich plume detailing.</p>
+              </div>
+            </div>
+          </div>
+          <!-- Item 2 -->
+          <div class="signature-item featured">
+            <div class="signature-card">
+              <img src="../assets/images/sig_2.png" alt="Avant-Garde Sculpture">
+              <div class="signature-card-content">
+                <h3>The Obsidian</h3>
+                <p>An architectural masterpiece sculpted in deep charcoal felt for the modern silhouette.</p>
+              </div>
+            </div>
+          </div>
+          <!-- Item 3 -->
+          <div class="signature-item">
+            <div class="signature-card">
+              <img src="../assets/images/sig_3.png" alt="Bespoke Fedora">
+              <div class="signature-card-content">
+                <h3>Heritage Fedora</h3>
+                <p>Premium rabbit-felt block with a hand-carved bridle leather band and silk lining.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="container">
 
       <!-- MINI SECTION (COLLECTION STORY) -->
@@ -414,7 +563,7 @@
           <div class="hat-card">
             <span class="tag-label">Bridal Exclusive</span>
             <div class="hat-card-img">
-              <img src="../../../brain/67b50efb-00c7-4b1a-b64b-607871d6ae68/bridal_ivory_fascinator_1775022410934.png"
+              <img src="../assets/images/bridal_ivory_fascinator.png"
                 alt="Ivory Charm" />
               <div class="hat-card-overlay">
                 <span class="view-details-text">View Details</span>
@@ -433,7 +582,7 @@
             <span class="tag-label">Bespoke</span>
             <div class="hat-card-img">
               <img
-                src="../../../brain/67b50efb-00c7-4b1a-b64b-607871d6ae68/vintage_cloche_emerald_green_1775022429564.png"
+                src="../assets/images/velvet_cloche_emerald.png"
                 alt="Velvet Empress" />
               <div class="hat-card-overlay">
                 <span class="view-details-text">View Details</span>
@@ -452,7 +601,7 @@
           <div class="hat-card">
             <span class="tag-label">Limited Edition</span>
             <div class="hat-card-img">
-              <img src="https://images.unsplash.com/photo-1549439602-43ebca2327af?w=800&q=80" alt="Raffia Hat" />
+              <img src="../assets/images/luxury_raffia_hat.png" alt="Raffia Hat" />
               <div class="hat-card-overlay">
                 <span class="view-details-text">View Details</span>
               </div>
@@ -552,35 +701,60 @@
   <footer class="luxury-footer">
     <div class="container">
       <div class="footer-grid">
+        <!-- Brand Col -->
         <div class="reveal">
-          <a href="../index.html" class="footer-brand">HMS</a>
-          <p style="max-width:300px; color:var(--clr-text-muted); margin-bottom:2rem; font-size:0.9rem;">Preserving the
-            legacy of artisanal millinery with a focus on modern excellence.</p>
+          <a href="../index.html" class="navbar-brand">
+            <img src="../assets/images/download (1).png" alt="HMS Studio Logo" class="footer-brand-logo">
+          </a>
+          <p class="footer-tagline">
+            Preserving the legacy of artisanal millinery with a focus on modern excellence and individual craft.
+          </p>
           <div class="d-flex gap-3">
-            <a href="#" class="btn-toggle-ui" style="width:40px; height:40px; padding:0; justify-content:center;"><i
-                class="bi bi-instagram"></i></a>
-            <a href="#" class="btn-toggle-ui" style="width:40px; height:40px; padding:0; justify-content:center;"><i
-                class="bi bi-pinterest"></i></a>
-            <a href="#" class="btn-toggle-ui" style="width:40px; height:40px; padding:0; justify-content:center;"><i
-                class="bi bi-facebook"></i></a>
+            <a href="#" class="footer-social-link"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="footer-social-link"><i class="bi bi-pinterest"></i></a>
+            <a href="#" class="footer-social-link"><i class="bi bi-facebook"></i></a>
           </div>
         </div>
+
+        <!-- Navigate -->
         <div class="reveal">
-          <h4
-            style="font-size:1rem; text-transform:uppercase; letter-spacing:2px; margin-bottom:1.8rem; font-family:var(--ff-sans);">
-            Navigate</h4>
-          <a href="about.html" class="footer-link">Our Story</a>
-          <a href="lookbook.html" class="footer-link">Lookbook</a>
-          <a href="services.html" class="footer-link">Services</a>
-          <a href="blog.html" class="footer-link">Journal</a>
+          <h4 class="footer-heading">Navigate</h4>
+          <ul class="footer-list">
+            <li class="footer-list-item"><a href="about.html" class="footer-nav-link">Our Story</a></li>
+            <li class="footer-list-item"><a href="lookbook.html" class="footer-nav-link">Lookbook</a></li>
+            <li class="footer-list-item"><a href="services.html" class="footer-nav-link">Services</a></li>
+            <li class="footer-list-item"><a href="blog.html" class="footer-nav-link">Journal</a></li>
+          </ul>
         </div>
+
+        <!-- Support -->
         <div class="reveal">
-          <h4
-            style="font-size:1rem; text-transform:uppercase; letter-spacing:2px; margin-bottom:1.8rem; font-family:var(--ff-sans);">
-            Support</h4>
-          <a href="faq.html" class="footer-link">FAQ</a>
-          <a href="booking.html" class="footer-link">Booking</a>
-          <a href="contact.html" class="footer-link">Contact Us</a>
+          <h4 class="footer-heading">Support</h4>
+          <ul class="footer-list">
+            <li class="footer-list-item"><a href="faq.html" class="footer-nav-link">FAQ</a></li>
+            <li class="footer-list-item"><a href="booking.html" class="footer-nav-link">Booking</a></li>
+            <li class="footer-list-item"><a href="contact.html" class="footer-nav-link">Contact Us</a></li>
+            <li class="footer-list-item"><a href="#" class="footer-nav-link">Privacy Policy</a></li>
+          </ul>
+        </div>
+
+        <!-- Visit Us -->
+        <div class="reveal">
+          <h4 class="footer-heading">Visit Us</h4>
+          <p class="footer-description">
+            14 Millinery Lane, Shoreditch <br>
+            London E1 6RF, UK <br>
+            <a href="mailto:hello@hmstudio.co.uk" class="footer-email-link">hello@hmstudio.co.uk</a>
+          </p>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="footer-bottom">
+        <p class="footer-copyright">© 2026 Custom Hat & Millinery Studio. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="#" class="footer-meta-link">Terms</a>
+          <a href="#" class="footer-meta-link">Cookies</a>
         </div>
       </div>
     </div>

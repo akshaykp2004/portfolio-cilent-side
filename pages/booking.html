@@ -17,13 +17,17 @@
 
   <div id="page-loader"
     style="position:fixed;inset:0;background:#fff;z-index:9999;display:flex;align-items:center;justify-content:center;transition:opacity 0.6s ease;">
-    <div style="font-family:'Playfair Display',serif;font-size:2rem;letter-spacing:4px;color:#121212;">HMS</div>
+    <div style="font-family:'Playfair Display',serif;font-size:2rem;letter-spacing:4px;color:#121212;">
+      <img src="../assets/images/download (1).png" alt="HMS Studio Logo" style="height: 60px;">
+    </div>
   </div>
 
   <!-- ========== NAVBAR ========== -->
   <nav class="luxury-nav">
     <div class="nav-container">
-      <a class="navbar-brand" href="../index.html">HMS</a>
+      <a class="navbar-brand" href="../index.html">
+        <img src="../assets/images/download (1).png" alt="HMS Studio Logo" class="studio-logo">
+      </a>
 
       <ul class="nav-links">
         <li><a class="nav-link-luxury" href="../index.html">Home</a></li>
@@ -52,14 +56,14 @@
       align-items: center;
       justify-content: center;
       overflow: hidden;
-      background: url('../assets/images/booking_hero_bg.png') no-repeat center center/cover fixed;
+      background: url('../assets/images/booking_hero_bg_dark.png') no-repeat center center/cover fixed;
     }
 
     .booking-hero::before {
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(to bottom, rgba(253, 251, 247, 0.7) 0%, rgba(253, 251, 247, 0.85) 100%);
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.7) 100%);
       backdrop-filter: blur(4px);
       z-index: 1;
     }
@@ -108,10 +112,10 @@
       <span
         style="font-family:var(--ff-sans);font-size:0.75rem;letter-spacing:6px;text-transform:uppercase;color:var(--clr-accent);margin-bottom:1.5rem;display:block;">Bespoke
         Experience</span>
-      <h1 style="font-size:4.5rem; margin-bottom:1.5rem; font-family: 'Playfair Display', serif;">Book a
+      <h1 style="font-size:4.5rem; margin-bottom:1.5rem; font-family: 'Playfair Display', serif; color: #fff;">Book a
         <em>Consultation</em>
       </h1>
-      <p style="font-style: italic; color: #555; max-width: 500px; margin: 0 auto;">Step into our world of craftsmanship
+      <p style="font-style: italic; color: var(--clr-gold-light); max-width: 500px; margin: 0 auto; opacity: 0.9;">Step into our world of craftsmanship
         and begin your journey toward a unique HMS creation.</p>
     </div>
   </header>
@@ -237,33 +241,60 @@
   <footer class="luxury-footer">
     <div class="container">
       <div class="footer-grid">
+        <!-- Brand Col -->
         <div class="reveal">
-          <a href="../index.html" class="footer-brand">HMS</a>
-          <p style="max-width:300px; color:var(--clr-text-muted); margin-bottom:2rem; font-size:0.9rem;">Preserving the
-            legacy of artisanal millinery with a focus on modern excellence.</p>
+          <a href="../index.html" class="navbar-brand">
+            <img src="../assets/images/download (1).png" alt="HMS Studio Logo" class="footer-brand-logo">
+          </a>
+          <p class="footer-tagline">
+            Preserving the legacy of artisanal millinery with a focus on modern excellence and individual craft.
+          </p>
           <div class="d-flex gap-3">
-            <a href="#" class="btn-toggle-ui" style="width:40px; height:40px; padding:0; justify-content:center;"><i
-                class="bi bi-instagram"></i></a>
-            <a href="#" class="btn-toggle-ui" style="width:40px; height:40px; padding:0; justify-content:center;"><i
-                class="bi bi-pinterest"></i></a>
+            <a href="#" class="footer-social-link"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="footer-social-link"><i class="bi bi-pinterest"></i></a>
+            <a href="#" class="footer-social-link"><i class="bi bi-facebook"></i></a>
           </div>
         </div>
+
+        <!-- Navigate -->
         <div class="reveal">
-          <h4
-            style="font-size:1rem; text-transform:uppercase; letter-spacing:2px; margin-bottom:1.8rem; font-family:var(--ff-sans);">
-            Navigate</h4>
-          <a href="about.html" class="footer-link">Our Story</a>
-          <a href="lookbook.html" class="footer-link">Lookbook</a>
-          <a href="services.html" class="footer-link">Services</a>
-          <a href="blog.html" class="footer-link">Journal</a>
+          <h4 class="footer-heading">Navigate</h4>
+          <ul class="footer-list">
+            <li class="footer-list-item"><a href="about.html" class="footer-nav-link">Our Story</a></li>
+            <li class="footer-list-item"><a href="lookbook.html" class="footer-nav-link">Lookbook</a></li>
+            <li class="footer-list-item"><a href="services.html" class="footer-nav-link">Services</a></li>
+            <li class="footer-list-item"><a href="blog.html" class="footer-nav-link">Journal</a></li>
+          </ul>
         </div>
+
+        <!-- Support -->
         <div class="reveal">
-          <h4
-            style="font-size:1rem; text-transform:uppercase; letter-spacing:2px; margin-bottom:1.8rem; font-family:var(--ff-sans);">
-            Support</h4>
-          <a href="faq.html" class="footer-link">FAQ</a>
-          <a href="booking.html" class="footer-link">Booking</a>
-          <a href="contact.html" class="footer-link">Contact Us</a>
+          <h4 class="footer-heading">Support</h4>
+          <ul class="footer-list">
+            <li class="footer-list-item"><a href="faq.html" class="footer-nav-link">FAQ</a></li>
+            <li class="footer-list-item"><a href="booking.html" class="footer-nav-link">Booking</a></li>
+            <li class="footer-list-item"><a href="contact.html" class="footer-nav-link">Contact Us</a></li>
+            <li class="footer-list-item"><a href="#" class="footer-nav-link">Privacy Policy</a></li>
+          </ul>
+        </div>
+
+        <!-- Visit Us -->
+        <div class="reveal">
+          <h4 class="footer-heading">Visit Us</h4>
+          <p class="footer-description">
+            14 Millinery Lane, Shoreditch <br>
+            London E1 6RF, UK <br>
+            <a href="mailto:hello@hmstudio.co.uk" class="footer-email-link">hello@hmstudio.co.uk</a>
+          </p>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="footer-bottom">
+        <p class="footer-copyright">© 2026 Custom Hat & Millinery Studio. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="#" class="footer-meta-link">Terms</a>
+          <a href="#" class="footer-meta-link">Cookies</a>
         </div>
       </div>
     </div>
