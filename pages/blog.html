@@ -36,17 +36,39 @@
         <li><a class="nav-link-luxury active" href="blog.html">Journal</a></li>
         <li><a class="nav-link-luxury" href="booking.html">Booking</a></li>
         <li><a class="nav-link-luxury" href="contact.html">Contact</a></li>
+
+        <!-- Mobile Toggles (Single Row) -->
+        <li class="nav-mobile-controls">
+          <div class="mobile-toggle-item" data-theme-toggle>
+            <span class="mobile-toggle-icon theme-icon">🌙</span>
+            <span class="mobile-toggle-label theme-label">Dark</span>
+          </div>
+          <div class="mobile-toggle-item" data-rtl-toggle>
+            <span class="mobile-toggle-icon"><i class="bi bi-translate"></i></span>
+            <span class="mobile-toggle-label rtl-label">RTL</span>
+          </div>
+        </li>
       </ul>
 
       <div class="nav-controls">
         <button class="btn-toggle-ui" data-theme-toggle><span class="theme-icon">🌙</span></button>
         <button class="btn-toggle-ui" data-rtl-toggle><span class="rtl-label">RTL Mode</span></button>
         <a href="login.html" class="btn-luxury" style="padding: 0.6rem 1.5rem; font-size: 0.65rem;">Login</a>
+        
+        <button class="nav-hamburger" aria-label="Menu Toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </div>
     </div>
   </nav>
 
   <style>
+    :root {
+      --clr-gold-light: #e5d5a5;
+    }
+
     .journal-hero {
       position: relative;
       height: 600px;
@@ -54,7 +76,7 @@
       align-items: center;
       justify-content: center;
       overflow: hidden;
-      background: url('../assets/images/journal_hero_bg_dark.png') no-repeat center center/cover fixed;
+      background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)), url('../assets/images/journal_hero_bg_dark.png') no-repeat center center/cover fixed;
     }
 
     .journal-hero::before {
@@ -112,6 +134,12 @@
       border: 1px solid rgba(212, 175, 55, 0.15);
       text-align: center;
       margin-bottom: 3rem;
+      color: #121212 !important; /* Always dark text on a white box */
+    }
+
+    .newsletter-box h4,
+    .newsletter-box p {
+      color: #121212 !important;
     }
 
     .newsletter-input {
@@ -213,7 +241,7 @@
             <div class="newsletter-box">
               <h4 style="font-family: 'Playfair Display', serif; font-size: 1.5rem; margin-bottom: 1rem;">Studio Insider
               </h4>
-              <p style="font-size: 0.85rem; color: #777; margin-bottom: 2rem;">Join our monthly journal for early access
+              <p style="font-size: 0.85rem; margin-bottom: 2rem;">Join our monthly journal for early access
                 to lookbooks, styling tips, and BTS stories.</p>
               <input type="email" class="newsletter-input" placeholder="Your email address">
               <button class="btn-luxury" style="width: 100%; padding: 1rem;">Subscribe</button>

@@ -38,17 +38,39 @@
         <li><a class="nav-link-luxury" href="blog.html">Journal</a></li>
         <li><a class="nav-link-luxury" href="booking.html">Booking</a></li>
         <li><a class="nav-link-luxury" href="contact.html">Contact</a></li>
+
+        <!-- Mobile Toggles (Single Row) -->
+        <li class="nav-mobile-controls">
+          <div class="mobile-toggle-item" data-theme-toggle>
+            <span class="mobile-toggle-icon theme-icon">🌙</span>
+            <span class="mobile-toggle-label theme-label">Dark</span>
+          </div>
+          <div class="mobile-toggle-item" data-rtl-toggle>
+            <span class="mobile-toggle-icon"><i class="bi bi-translate"></i></span>
+            <span class="mobile-toggle-label rtl-label">RTL</span>
+          </div>
+        </li>
       </ul>
 
       <div class="nav-controls">
         <button class="btn-toggle-ui" data-theme-toggle><span class="theme-icon">🌙</span></button>
         <button class="btn-toggle-ui" data-rtl-toggle><span class="rtl-label">RTL Mode</span></button>
         <a href="login.html" class="btn-luxury" style="padding: 0.6rem 1.5rem; font-size: 0.65rem;">Login</a>
+
+        <button class="nav-hamburger" aria-label="Menu Toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </div>
     </div>
   </nav>
 
   <style>
+    :root {
+      --clr-gold-light: #e5d5a5;
+    }
+
     .booking-hero {
       position: relative;
       height: 600px;
@@ -56,7 +78,7 @@
       align-items: center;
       justify-content: center;
       overflow: hidden;
-      background: url('../assets/images/booking_hero_bg_dark.png') no-repeat center center/cover fixed;
+      background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.75)), url('../assets/images/booking_hero_bg_dark.png') no-repeat center center/cover fixed;
     }
 
     .booking-hero::before {

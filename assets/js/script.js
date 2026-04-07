@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initTheme();
   initDirection();
   initNavbar();
+  initMobileMenu(); // New Mobile Menu Logic
   initScrollAnimations();
   initBackToTop();
   initHeroParallax();
@@ -43,7 +44,7 @@ function applyTheme(theme) {
     const icon = btn.querySelector('.theme-icon') || btn;
     const label = btn.querySelector('.theme-label');
     if (icon) icon.textContent = theme === 'dark' ? '☀️' : '🌙';
-    if (label) label.textContent = theme === 'dark' ? 'Light Mode' : 'Dark Mode';
+    if (label) label.textContent = theme === 'dark' ? 'Light' : 'Dark';
   });
 }
 
@@ -71,7 +72,59 @@ function applyDirection(dir) {
 
   document.querySelectorAll('[data-rtl-toggle]').forEach(btn => {
     const label = btn.querySelector('.rtl-label');
-    if (label) label.textContent = dir === 'rtl' ? 'LTR Mode' : 'RTL Mode';
+    if (label) label.textContent = dir === 'rtl' ? 'LTR' : 'RTL';
+    
+    // Optional: Add active class or change icon/style based on direction
+    if (dir === 'rtl') {
+      btn.classList.add('active-rtl');
+    } else {
+      btn.classList.remove('active-rtl');
+    }
+  });
+}
+
+/* ============================================================
+   4. MOBILE MENU ENGINE (Hamburger Toggle)
+   ============================================================ */
+function initMobileMenu() {
+  const hamburger = document.querySelector('.nav-hamburger');
+  const navContainer = document.querySelector('.nav-container');
+  const navLinks = document.querySelector('.nav-links');
+
+  if (!hamburger || !navLinks) return;
+
+  hamburger.addEventListener('click', () => {
+    const isOpen = hamburger.classList.contains('active');
+    
+    if (isOpen) {
+      // Close Menu
+      hamburger.classList.remove('active');
+      navLinks.classList.remove('mobile-active');
+      document.body.style.overflow = ''; // Re-enable scroll
+    } else {
+      // Open Menu
+      hamburger.classList.add('active');
+      navLinks.classList.add('mobile-active');
+      document.body.style.overflow = 'hidden'; // Disable background scroll
+    }
+  });
+
+  // Close menu when clicking links
+  document.querySelectorAll('.nav-link-luxury').forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.classList.remove('active');
+      navLinks.classList.remove('mobile-active');
+      document.body.style.overflow = '';
+    });
+  });
+
+  // Close when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!navContainer.contains(e.target) && navLinks.classList.contains('mobile-active')) {
+      hamburger.classList.remove('active');
+      navLinks.classList.remove('mobile-active');
+      document.body.style.overflow = '';
+    }
   });
 }
 
@@ -134,15 +187,15 @@ function initHeroParallax() {
   const heroBg = document.querySelector('.hero-bg');
   if (!heroBg) return;
 
-  // Fade in hero bg on load
-  setTimeout(() => {
-    heroBg.classList.add('loaded');
-  }, 100);
+  // Banner img animation removed per request
+  // heroBg.classList.add('loaded');
 
+  /*
   window.addEventListener('scroll', () => {
     const scrollPos = window.pageYOffset;
     heroBg.style.transform = `scale(1.05) translateY(${scrollPos * 0.3}px)`;
   }, { passive: true });
+  */
 }
 
 /* ============================================================

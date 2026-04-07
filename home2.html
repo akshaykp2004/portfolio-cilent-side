@@ -46,6 +46,18 @@
         <li><a class="nav-link-luxury" href="pages/blog.html">Journal</a></li>
         <li><a class="nav-link-luxury" href="pages/booking.html">Booking</a></li>
         <li><a class="nav-link-luxury" href="pages/contact.html">Contact</a></li>
+
+        <!-- Mobile Toggles (Single Row) -->
+        <li class="nav-mobile-controls">
+          <div class="mobile-toggle-item" data-theme-toggle>
+            <span class="mobile-toggle-icon theme-icon">🌙</span>
+            <span class="mobile-toggle-label theme-label">Dark</span>
+          </div>
+          <div class="mobile-toggle-item" data-rtl-toggle>
+            <span class="mobile-toggle-icon"><i class="bi bi-translate"></i></span>
+            <span class="mobile-toggle-label rtl-label">RTL</span>
+          </div>
+        </li>
       </ul>
 
       <div class="nav-controls">
@@ -56,12 +68,19 @@
           <span class="rtl-label">RTL Mode</span>
         </button>
         <a href="pages/login.html" class="btn-luxury" style="padding: 0.6rem 1.5rem; font-size: 0.65rem;">Login</a>
+
+        <button class="nav-hamburger" aria-label="Menu Toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </div>
     </div>
   </nav>
 
   <!-- ========== HERO SECTION (CINEMATIC) ========== -->
-  <section class="hero-cinematic" aria-label="Hero">
+  <section class="hero-cinematic" aria-label="Hero"
+    style="background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('assets/images/luxury_atelier_hero.png'); background-size: cover; background-position: center; position: relative;">
     <div class="hero-bg-wrapper">
       <div class="hero-bg"></div>
     </div>
@@ -143,9 +162,14 @@
         <div class="process-text">
           <div class="process-number">01</div>
           <h3 style="font-size:2rem; margin-bottom:1.5rem;">The Foundation</h3>
-          <p style="font-size:1.05rem; color:var(--clr-text-muted); font-weight:300;">
+          <p style="font-size:1.05rem; color:var(--clr-text-muted); font-weight:300; line-height:1.8;">
             The journey begins with hand-blocking. Using vintage wooden hat blocks, we steam and mold the finest felt or
-            straw into its primary silhouette, ensuring a perfect structured base.
+            straw into its primary silhouette, ensuring a perfect structured base. This stage is the heartbeat of the
+            atelier, where raw materials are transformed into sculptural reality through intense heat and artisanal
+            patience. Our archival collection of blocks features over two hundred unique shapes, some dating back to the
+            early 1920s, ensuring that the soul of every headpiece is born from a legacy of classic couture. Every block
+            is carefully selected to complement the wearer's specific silhouette, allowing the fibers to memorize their
+            new form with permanent resilience.
           </p>
         </div>
       </div>
@@ -158,9 +182,14 @@
         <div class="process-text">
           <div class="process-number">02</div>
           <h3 style="font-size:2rem; margin-bottom:1.5rem;">Couture Trimming</h3>
-          <p style="font-size:1.05rem; color:var(--clr-text-muted); font-weight:300;">
+          <p style="font-size:1.05rem; color:var(--clr-text-muted); font-weight:300; line-height:1.8;">
             Our master milliners hand-stitch every detail. From ethically sourced feathers to hand-dyed silks, the
-            trimming process is where the hat’s unique character is truly sculpted.
+            trimming process is where the hat’s unique character is truly sculpted and brought to life through hundreds
+            of precise stitches. We utilize a library of antique French lace and modern architectural trimmings to
+            create a bridge between heritage and future fashion. Each ribbon and bloom is hand-manipulated in our
+            studio, often taking several days to achieve the precise tension and drape required for a couture unveil.
+            This phase is entirely bespoke, adapting every fold to the specific narrative requested by our clients,
+            ensuring No two pieces ever leave our doors with the same visual logic.
           </p>
         </div>
       </div>
@@ -173,9 +202,14 @@
         <div class="process-text">
           <div class="process-number">03</div>
           <h3 style="font-size:2rem; margin-bottom:1.5rem;">The Final Fitting</h3>
-          <p style="font-size:1.05rem; color:var(--clr-text-muted); font-weight:300;">
+          <p style="font-size:1.05rem; color:var(--clr-text-muted); font-weight:300; line-height:1.8;">
             Precision is paramount. Every headpiece undergoes a rigorous quality check and final steam to ensure it sits
-            perfectly and maintains its shape for generations to come.
+            perfectly and maintains its shape for generations to come, reflecting our commitment to archival quality.
+            During the final unveil, we meticulously adjust the internal millinery elastic and bespoke hair combs to
+            ensure the piece feels like a natural, weightless extension of the wearer. This personal connection is the
+            cornerstone of the HMS experience. Finally, the piece is nested in our signature silk-lined archival box,
+            protected for a lifetime of storied occasions and heritage display, ready to become a part of your
+            individual history.
           </p>
         </div>
       </div>
@@ -183,15 +217,14 @@
   </section>
 
   <!-- ========== CALL TO ACTION ========== -->
-  <section class="section-pad" style="background:var(--clr-accent); color:#fff; text-align:center;">
+  <section class="section-cta-premium">
     <div class="container">
       <div class="reveal">
-        <h2 style="font-size:3.5rem; margin-bottom:1.5rem; color:#fff;">Wear the <em>Impossible</em></h2>
-        <p style="font-size:1.2rem; max-width:600px; margin:0 auto 2.5rem; color:rgba(255,255,255,0.9);">
+        <h2 class="cta-title">Wear the <em>Impossible</em></h2>
+        <p class="cta-text">
           Join our exclusive client list and receive early access to seasonal collections and studio events.
         </p>
-        <a href="pages/booking.html" class="btn-luxury" style="background:#fff; color:#000; border-color:#fff;">Begin
-          Your Commission</a>
+        <a href="pages/booking.html" class="btn-cta-luxury">Begin Your Commission</a>
       </div>
     </div>
   </section>

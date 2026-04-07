@@ -36,12 +36,30 @@
         <li><a class="nav-link-luxury" href="blog.html">Journal</a></li>
         <li><a class="nav-link-luxury" href="booking.html">Booking</a></li>
         <li><a class="nav-link-luxury" href="contact.html">Contact</a></li>
+
+        <!-- Mobile Toggles (Single Row) -->
+        <li class="nav-mobile-controls">
+          <div class="mobile-toggle-item" data-theme-toggle>
+            <span class="mobile-toggle-icon theme-icon">🌙</span>
+            <span class="mobile-toggle-label theme-label">Dark</span>
+          </div>
+          <div class="mobile-toggle-item" data-rtl-toggle>
+            <span class="mobile-toggle-icon"><i class="bi bi-translate"></i></span>
+            <span class="mobile-toggle-label rtl-label">RTL</span>
+          </div>
+        </li>
       </ul>
 
       <div class="nav-controls">
         <button class="btn-toggle-ui" data-theme-toggle><span class="theme-icon">🌙</span></button>
         <button class="btn-toggle-ui" data-rtl-toggle><span class="rtl-label">RTL Mode</span></button>
         <a href="login.html" class="btn-luxury" style="padding: 0.6rem 1.5rem; font-size: 0.65rem;">Login</a>
+
+        <button class="nav-hamburger" aria-label="Menu Toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </div>
     </div>
   </nav>
@@ -56,6 +74,17 @@
     .services-nav-spacer {
       height: 100px;
       display: block;
+    }
+
+    .services-hero h1,
+    .services-hero p,
+    .services-hero span {
+      color: #fff !important;
+    }
+
+    .services-hero span {
+      color: #b5935b !important;
+      /* Gold eyebrow */
     }
 
     .services-hero {
@@ -152,16 +181,16 @@
     }
   </style>
 
-  <div class="services-nav-spacer"></div>
+
 
   <!-- ========== LUXURY HERO ========== -->
   <header class="services-hero">
     <div class="hero-content reveal">
       <span
-        style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 5px; color: var(--clr-gold-soft); display: block; margin-bottom: 1rem;">Signature
+        style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 5px; display: block; margin-bottom: 1rem;">Signature
         Craft</span>
       <h1>Our Services</h1>
-      <p style="font-style: italic; color: var(--clr-gold-light); max-width: 600px; margin: 0 auto; opacity: 0.9;">
+      <p style="font-style: italic; max-width: 600px; margin: 0 auto; opacity: 0.9;">
         Preserving the heritage of artisanal
         millinery through bespoke mastery and visionary design.</p>
     </div>
@@ -242,7 +271,7 @@
         <div class="col-md-3 reveal">
           <div class="material-item">
             <h4>Parasisal</h4>
-            <p>Hand-woven from agave fibers, our parasisal straw offers an ethereal sheen and unmatched structural
+            <p>Hand-woven from agave fibers, our parasisal straw offers an ethereal sheen and structural
               resilience.</p>
             <div class="gold-divider"></div>
           </div>

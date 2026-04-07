@@ -42,6 +42,8 @@
       justify-content: center;
       overflow: hidden;
       background: url('../assets/images/lookbook_hero_bg_dark.png') no-repeat center center/cover;
+      padding-top: 80px;
+      /* Balancing for fixed navbar */
     }
 
     .lookbook-hero::before {
@@ -72,7 +74,7 @@
     /* --- Gallery Container --- */
     .gallery-container {
       background: var(--clr-bg);
-      padding: 10rem 0;
+      padding: 4rem 0;
       position: relative;
       transition: background-color 0.4s ease;
     }
@@ -449,12 +451,30 @@
         <li><a class="nav-link-luxury" href="blog.html">Journal</a></li>
         <li><a class="nav-link-luxury" href="booking.html">Booking</a></li>
         <li><a class="nav-link-luxury" href="contact.html">Contact</a></li>
+
+        <!-- Mobile Toggles (Single Row) -->
+        <li class="nav-mobile-controls">
+          <div class="mobile-toggle-item" data-theme-toggle>
+            <span class="mobile-toggle-icon theme-icon">🌙</span>
+            <span class="mobile-toggle-label theme-label">Dark</span>
+          </div>
+          <div class="mobile-toggle-item" data-rtl-toggle>
+            <span class="mobile-toggle-icon"><i class="bi bi-translate"></i></span>
+            <span class="mobile-toggle-label rtl-label">RTL</span>
+          </div>
+        </li>
       </ul>
 
       <div class="nav-controls">
         <button class="btn-toggle-ui" data-theme-toggle><span class="theme-icon">🌙</span></button>
         <button class="btn-toggle-ui" data-rtl-toggle><span class="rtl-label">RTL Mode</span></button>
         <a href="login.html" class="btn-luxury" style="padding: 0.6rem 1.5rem; font-size: 0.65rem;">Login</a>
+
+        <button class="nav-hamburger" aria-label="Menu Toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </div>
     </div>
   </nav>
@@ -471,7 +491,7 @@
         Explore our curated archive of artisanal headwear, where every stitch preserves a legacy of elegance and
         visionary craft.
       </p>
-      <div class="divider-gold"></div>
+      <div class="divider-gold" style="margin: 2rem auto;"></div>
     </div>
   </header>
 
@@ -487,7 +507,7 @@
           <h2
             style="font-family:var(--ff-serif); color:var(--clr-heading); font-size:4rem; margin-bottom:1rem; font-weight:400;">
             Signature Highlights</h2>
-          <div class="divider-gold" style="width: 80px;"></div>
+          <div class="divider-gold" style="width: 80px; margin: 2rem auto;"></div>
         </div>
 
         <div class="signature-grid">
@@ -682,24 +702,18 @@
 
   <!-- ========== STYLE STORY SECTION ========== -->
   <section class="style-story reveal">
-    <div class="style-story-content">
+    <div class="style-story-content" style="color: var(--clr-text);">
       <h3>The Art of Expression</h3>
       <div class="divider-gold"></div>
       <p>Each piece is designed to embody individuality, blending heritage craftsmanship with modern elegance. Our
         artisans spend hundreds of hours sculpting every curve and stitching every detail.</p>
-      <p style="font-size: 0.9rem; color: #888;">We believe a hat is more than an accessory; it's a testament to the
+      <p style="font-size: 0.9rem;">We believe a hat is more than an accessory; it's a testament to the
         wearer's unique journey and style legacy.</p>
       <a href="about.html" class="btn-story">Explore the Story</a>
     </div>
   </section>
 
-  <!-- ========== QUOTE SECTION ========== -->
-  <section class="quote-section reveal">
-    <div class="container">
-      <p class="quote-text">“Elegance is the only beauty that never fades.”</p>
-      <div class="divider-gold" style="width: 40px; margin-top: 3rem;"></div>
-    </div>
-  </section>
+
 
   <!-- ========== FOOTER ========== -->
   <footer class="luxury-footer">

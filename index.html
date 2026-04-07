@@ -46,6 +46,18 @@
         <li><a class="nav-link-luxury" href="pages/blog.html">Journal</a></li>
         <li><a class="nav-link-luxury" href="pages/booking.html">Booking</a></li>
         <li><a class="nav-link-luxury" href="pages/contact.html">Contact</a></li>
+
+        <!-- Mobile-only Toggles (Controlled via CSS) -->
+        <li class="nav-mobile-controls">
+          <div class="mobile-toggle-item" data-theme-toggle>
+            <span class="mobile-toggle-icon theme-icon">🌙</span>
+            <span class="mobile-toggle-label theme-label">Dark</span>
+          </div>
+          <div class="mobile-toggle-item" data-rtl-toggle>
+            <span class="mobile-toggle-icon"><i class="bi bi-translate"></i></span>
+            <span class="mobile-toggle-label rtl-label">RTL</span>
+          </div>
+        </li>
       </ul>
 
       <div class="nav-controls">
@@ -56,12 +68,19 @@
           <span class="rtl-label">RTL Mode</span>
         </button>
         <a href="pages/login.html" class="btn-luxury" style="padding: 0.6rem 1.5rem; font-size: 0.65rem;">Login</a>
+        
+        <button class="nav-hamburger" aria-label="Menu Toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </div>
     </div>
   </nav>
 
   <!-- ========== HERO SECTION ========== -->
-  <section class="hero-section" aria-label="Hero">
+  <section class="hero-section" aria-label="Hero"
+    style="background-image: url('assets/images/luxury_close_up_hero.png'); background-size: cover; background-position: center; position: relative;">
     <div class="hero-bg-wrapper">
       <div class="hero-bg"></div>
     </div>
@@ -73,8 +92,7 @@
         <h1 class="hero-title">
           The Art of <em>Bespoke</em> Millinery
         </h1>
-        <p
-          style="color:rgba(255,255,255,0.8); margin-bottom:2.5rem; max-width:500px; margin-inline: auto;">
+        <p style="color:rgba(255,255,255,0.8); margin-bottom:2.5rem; max-width:500px; margin-inline: auto;">
           Handcrafted hats and couture headpieces made purely to order. Experience the fusion of tradition and
           contemporary elegance.
         </p>
