@@ -39,12 +39,12 @@ function applyTheme(theme) {
   document.documentElement.setAttribute('data-theme', theme);
   localStorage.setItem(THEME_KEY, theme);
 
-  // Update UI indicators
+  // Update UI indicators for consolidated toggles
   document.querySelectorAll('[data-theme-toggle]').forEach(btn => {
     const icon = btn.querySelector('.theme-icon') || btn;
-    const label = btn.querySelector('.theme-label');
-    if (icon) icon.textContent = theme === 'dark' ? '☀️' : '🌙';
-    if (label) label.textContent = theme === 'dark' ? 'Light' : 'Dark';
+    if (icon) {
+      icon.innerHTML = theme === 'dark' ? '<i class="bi bi-sun-fill"></i>' : '<i class="bi bi-moon-stars-fill"></i>';
+    }
   });
 }
 
@@ -71,10 +71,7 @@ function applyDirection(dir) {
   localStorage.setItem(DIR_KEY, dir);
 
   document.querySelectorAll('[data-rtl-toggle]').forEach(btn => {
-    const label = btn.querySelector('.rtl-label');
-    if (label) label.textContent = dir === 'rtl' ? 'LTR' : 'RTL';
-    
-    // Optional: Add active class or change icon/style based on direction
+    // Toggle active state
     if (dir === 'rtl') {
       btn.classList.add('active-rtl');
     } else {
