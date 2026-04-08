@@ -11,9 +11,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
   <link rel="stylesheet" href="../assets/css/style.css" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Outfit:wght@300;400;600&display=swap"
-    rel="stylesheet">
+  <!-- Unified Typography via style.css -->
 
   <style>
     :root {
@@ -22,13 +20,10 @@
       --clr-gold: #b5935b;
       --clr-gold-light: #e5d5a5;
       --clr-grey-light: #f0f0f0;
-      --ff-serif: 'Playfair Display', serif;
-      --ff-sans: 'Outfit', sans-serif;
     }
 
     body {
       background-color: var(--clr-bg);
-      font-family: var(--ff-sans);
       color: var(--clr-text);
       transition: background-color 0.4s ease, color 0.4s ease;
     }
@@ -62,9 +57,8 @@
     }
 
     .lookbook-hero h1 {
-      font-family: var(--ff-serif);
-      font-size: 5rem;
-      font-weight: 400;
+      font-size: 5.5rem;
+      font-weight: var(--fw-bold);
       color: #fff;
       text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
       letter-spacing: -1px;
@@ -181,8 +175,8 @@
     }
 
     .hat-card-title {
-      font-family: var(--ff-serif);
-      font-size: 1.4rem;
+      font-size: 1.5rem;
+      font-weight: var(--fw-semibold);
       margin-bottom: 0.5rem;
       color: var(--clr-heading);
     }
@@ -210,8 +204,8 @@
     }
 
     .collection-header h2 {
-      font-family: var(--ff-serif);
-      font-size: 3rem;
+      font-size: 3.2rem;
+      font-weight: var(--fw-bold);
       margin-bottom: 2rem;
       color: var(--clr-heading);
     }
@@ -235,8 +229,8 @@
     }
 
     .category-item h4 {
-      font-family: var(--ff-serif);
-      font-size: 1.1rem;
+      font-size: 1.25rem;
+      font-weight: var(--fw-semibold);
       margin-bottom: 0.5rem;
       color: var(--clr-heading);
     }
@@ -318,8 +312,8 @@
     }
 
     .signature-card-content h3 {
-      font-family: var(--ff-serif);
-      font-size: 1.8rem;
+      font-size: 2rem;
+      font-weight: var(--fw-bold);
       margin-bottom: 0.5rem;
       color: #fff;
     }
@@ -376,8 +370,8 @@
     }
 
     .style-story h3 {
-      font-family: var(--ff-serif);
-      font-size: 2.5rem;
+      font-size: 2.8rem;
+      font-weight: var(--fw-bold);
       margin-bottom: 1.5rem;
     }
 
@@ -408,12 +402,13 @@
     }
 
     .quote-text {
-      font-family: var(--ff-serif);
-      font-size: 2rem;
+      font-size: 2.2rem;
       font-style: italic;
       color: var(--clr-heading);
-      max-width: 700px;
+      max-width: 750px;
       margin: 0 auto;
+      line-height: 1.4;
+      font-weight: var(--fw-medium);
     }
 
     @media (max-width: 992px) {
@@ -485,11 +480,11 @@
   <header class="lookbook-hero">
     <div class="lookbook-hero-content container reveal">
       <span
-        style="font-family:var(--ff-sans);font-size:0.7rem;letter-spacing:5px;text-transform:uppercase;color:var(--clr-gold);margin-bottom:1.5rem;display:block;">Curated
+        style="font-size:0.75rem;letter-spacing:5px;text-transform:uppercase;color:var(--clr-gold);margin-bottom:1.5rem;display:block;font-weight:var(--fw-medium);">Curated
         Collections</span>
       <h1>The Lookbook</h1>
       <p
-        style="font-family: var(--ff-serif); font-style: italic; color: rgba(255,255,255,0.7); font-size: 1.25rem; max-width: 600px; margin: 1rem auto 2.5rem; line-height: 1.6;">
+        style="font-style: italic; color: rgba(255,255,255,0.7); font-size: 1.25rem; max-width: 600px; margin: 1rem auto 2.5rem; line-height: 1.6;">
         Explore our curated archive of artisanal headwear, where every stitch preserves a legacy of elegance and
         visionary craft.
       </p>
@@ -504,10 +499,10 @@
       <div class="container">
         <div class="text-center mb-5">
           <span
-            style="font-family:var(--ff-sans);font-size:0.7rem;letter-spacing:6px;text-transform:uppercase;color:var(--clr-gold);margin-bottom:1.5rem;display:block;">Exclusive
+            style="font-size:0.75rem;letter-spacing:6px;text-transform:uppercase;color:var(--clr-gold);margin-bottom:1.5rem;display:block;font-weight:var(--fw-medium);">Exclusive
             Edition</span>
           <h2
-            style="font-family:var(--ff-serif); color:var(--clr-heading); font-size:4rem; margin-bottom:1rem; font-weight:400;">
+            style="color:var(--clr-heading); font-size:4rem; margin-bottom:1rem; font-weight:var(--fw-bold);">
             Signature Highlights</h2>
           <div class="divider-gold" style="width: 80px; margin: 2rem auto;"></div>
         </div>
