@@ -12,7 +12,7 @@
   /* Font Families - Unified to Playfair Display */
   --ff-primary: 'Playfair Display', serif;
   --ff-heading: 'Playfair Display', serif;
-  
+
   /* Typographic Scale (Major Third) */
   --fs-base: 1rem;
   --fs-h1: clamp(2.5rem, 5vw, 3.5rem);
@@ -48,7 +48,8 @@
 
 html {
   scroll-behavior: smooth;
-  font-size: 16px; /* Base size */
+  font-size: 16px;
+  /* Base size */
 }
 
 body {
@@ -62,7 +63,12 @@ body {
 }
 
 /* ---------- Global Typography ---------- */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--ff-heading);
   line-height: var(--lh-heading);
   color: var(--clr-heading, inherit);
@@ -70,35 +76,35 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Specific requirements: h1 bold, h2-h4 semi-bold */
-h1 { 
-  font-size: var(--fs-h1); 
+h1 {
+  font-size: var(--fs-h1);
   font-weight: var(--fw-bold);
   letter-spacing: -0.01em;
 }
 
-h2 { 
-  font-size: var(--fs-h2); 
+h2 {
+  font-size: var(--fs-h2);
   font-weight: var(--fw-semibold);
   letter-spacing: -0.01em;
 }
 
-h3 { 
-  font-size: var(--fs-h3); 
+h3 {
+  font-size: var(--fs-h3);
   font-weight: var(--fw-semibold);
 }
 
-h4 { 
-  font-size: var(--fs-h4); 
+h4 {
+  font-size: var(--fs-h4);
   font-weight: var(--fw-semibold);
 }
 
-h5 { 
-  font-size: var(--fs-h5); 
+h5 {
+  font-size: var(--fs-h5);
   font-weight: var(--fw-medium);
 }
 
-h6 { 
-  font-size: var(--fs-h6); 
+h6 {
+  font-size: var(--fs-h6);
   font-weight: var(--fw-medium);
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -126,6 +132,12 @@ a {
 }
 
 /* Maintain compatibility while focusing on the unified font */
-.font-serif { font-family: var(--ff-primary); }
-.font-sans { font-family: var(--ff-primary); } /* Redirected to Playfair */
+.font-serif {
+  font-family: var(--ff-primary);
+}
 
+.font-sans {
+  font-family: var(--ff-primary);
+}
+
+/* Redirected to Playfair */

@@ -679,6 +679,16 @@ a {
   color: var(--clr-accent-gold);
 }
 
+.hero-description {
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 2.5rem;
+  max-width: 600px;
+  margin-inline: auto;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  font-weight: var(--fw-regular);
+}
+
 /* ============================================================
    SECTION CONTENT
    ============================================================ */
@@ -1460,7 +1470,8 @@ a {
 }
 
 .luxury-nav .navbar-brand {
-  color: #b5935b !important; /* Signature HMS Gold */
+  color: #b5935b !important;
+  /* Signature HMS Gold */
   font-family: var(--ff-heading) !important;
   font-weight: var(--fw-bold) !important;
   font-size: 1.8rem !important;
@@ -1598,7 +1609,8 @@ body {
 
 /* Mobile Utility Group (Inside Hamburger) */
 .nav-mobile-utility {
-  display: none; /* Default hidden, shown in media query */
+  display: none;
+  /* Default hidden, shown in media query */
   align-items: center;
   justify-content: center;
   gap: 1.5rem;
