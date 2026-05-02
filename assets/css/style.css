@@ -191,39 +191,27 @@ a {
   transform: translateY(0);
 }
 
-/* ---------- Authentication Cards (Glassmorphism) ---------- */
+/* ---------- Authentication Section ---------- */
 .auth-container {
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 6rem 2rem;
-  background-image: url('https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=1600&q=80');
-  background-size: cover;
-  background-position: center;
+  padding: 4rem 2rem;
+  background: radial-gradient(circle at center, var(--clr-bg) 0%, var(--clr-bg-alt) 100%);
   position: relative;
-}
-
-.auth-container::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: var(--clr-overlay);
-  z-index: 1;
 }
 
 .auth-card {
   position: relative;
   z-index: 2;
   width: 100%;
-  max-width: 480px;
-  padding: 3.5rem 2.8rem;
-  background: var(--clr-nav-bg);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  max-width: 460px;
+  padding: 4rem 3rem;
+  background: var(--clr-surface);
   border: 1px solid var(--clr-border);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-md);
+  border-radius: var(--radius-md);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.03);
 }
 
 .auth-card .navbar-brand {
@@ -236,9 +224,9 @@ a {
 
 .auth-title {
   font-family: var(--ff-heading);
-  font-size: 2.8rem;
+  font-size: 2.2rem;
   font-weight: var(--fw-bold);
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
   text-align: center;
 }
 
@@ -2103,4 +2091,15 @@ body {
   .nav-controls .nav-utility-group {
     display: none !important;
   }
+}
+
+/* ---------- Auth Logo Link Styles ---------- */
+.auth-logo-link {
+  display: inline-block;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.auth-logo-link:hover {
+  opacity: 0.8;
+  transform: translateY(-2px);
 }
