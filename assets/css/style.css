@@ -1474,8 +1474,12 @@ a {
   height: 68px;
   width: auto;
   border-radius: 4px;
-  transition: transform 0.3s ease;
+  transition: all 0.3s ease;
   background: transparent !important;
+}
+
+[data-theme="light"] .auth-card .studio-logo {
+  filter: brightness(0.4) contrast(1.2);
 }
 
 .navbar-brand:hover .studio-logo {
@@ -1652,6 +1656,11 @@ body {
   object-fit: contain;
   margin-bottom: 2rem;
   display: block;
+  transition: all 0.3s ease;
+}
+
+[data-theme="light"] .footer-brand-logo {
+  filter: brightness(0.4) contrast(1.2);
 }
 
 .footer-tagline {
