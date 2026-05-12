@@ -1462,7 +1462,7 @@ a {
   /* Signature HMS Gold */
   font-family: var(--ff-heading) !important;
   font-weight: var(--fw-bold) !important;
-  font-size: 1.8rem !important;
+  font-size: 2rem !important;
   text-transform: uppercase !important;
   letter-spacing: 4px !important;
   display: flex !important;
@@ -1471,7 +1471,7 @@ a {
 }
 
 .studio-logo {
-  height: 44px;
+  height: 68px;
   width: auto;
   border-radius: 4px;
   transition: transform 0.3s ease;
@@ -1647,7 +1647,7 @@ body {
 }
 
 .footer-brand-logo {
-  height: 40px;
+  height: 65px;
   width: auto;
   object-fit: contain;
   margin-bottom: 2rem;
@@ -1982,7 +1982,7 @@ body {
   }
 
   .studio-logo {
-    height: 28px;
+    height: 42px;
   }
 
   .nav-controls {
